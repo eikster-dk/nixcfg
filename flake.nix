@@ -14,6 +14,9 @@
     };
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-        ## to be determined
-    };
+     darwinConfigurations."Eiks-MacBook-Pro-2" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [ ./modules/darwin/configuration.nix ];
+      };
+  };
 }

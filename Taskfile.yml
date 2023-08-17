@@ -1,0 +1,20 @@
+# https://taskfile.dev
+version: '3'
+
+vars:
+  HOSTNAME:
+    sh: "hostname -s"
+
+tasks:
+  update:
+    cmds:
+      - nix flake update
+  apply:
+    status:
+      - "test $(uname -s) -ne Darwin"
+    cmds:
+      - nix build './#darwinConfigurations.{{ .HOSTNAME }}.system'
+      - ./result/sw/bin/darwin-rebuild switch --flake .
+  clean:
+    cmds:
+      - nix-collect-garbage -d
