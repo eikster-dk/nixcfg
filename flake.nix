@@ -16,7 +16,19 @@
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
      darwinConfigurations."Eiks-MacBook-Pro-2" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        modules = [ ./modules/darwin/configuration.nix ];
-      };
+        modules = [ 
+          ./modules/darwin/configuration.nix
+        ];
+     };
+     homeConfigurations = {
+        "eikchristensen@Eiks-MacBook-Pro-2" = home-manager.lib.homeManagerConfiguration {
+           pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+           extraSpecialArgs = { inherit inputs; };
+           modules = [ 
+             ./modules/home.nix
+             ./modules/wezterm/default.nix
+           ];
+        };
+     };
   };
 }

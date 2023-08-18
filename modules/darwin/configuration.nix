@@ -5,7 +5,9 @@
 
   homebrew = {
       enable = true;
-      casks = [];
+      casks = [
+        "wezterm"
+      ];
   };
 
   system = {
@@ -15,5 +17,5 @@
       };
     };
   };
-
 }
+

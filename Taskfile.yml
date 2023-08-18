@@ -10,6 +10,9 @@ tasks:
     cmds:
       - nix flake update
   apply:
+    cmds:
+      - home-manager switch --flake '.#eikchristensen@{{.HOSTNAME}}'
+  apply_darwin:
     status:
       - "test $(uname -s) -ne Darwin"
     cmds:
