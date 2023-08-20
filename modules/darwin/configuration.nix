@@ -26,6 +26,9 @@
         mineffect = "scale";
         mru-spaces = false;
       };
+      spaces = {
+          spans-displays = false;
+      };
       NSGlobalDomain = {
           ApplePressAndHoldEnabled = false;
           KeyRepeat = 2;
