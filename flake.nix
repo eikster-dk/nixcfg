@@ -27,6 +27,7 @@
            modules = [ 
              ./modules/home.nix
              ./modules/wezterm/default.nix
+             ./modules/git.nix
            ];
         };
      };
