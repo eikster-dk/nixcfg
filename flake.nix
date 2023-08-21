@@ -28,6 +28,7 @@
              ./modules/wezterm/default.nix
              ./modules/home.nix
              ./modules/bat.nix
+             ./modules/direnv.nix
              ./modules/git.nix
            ];
         };
