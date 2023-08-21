@@ -30,6 +30,7 @@
              ./modules/bat.nix
              ./modules/direnv.nix
              ./modules/exa.nix
+             ./modules/fzf.nix
              ./modules/git.nix
            ];
         };
