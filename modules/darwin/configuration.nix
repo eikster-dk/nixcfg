@@ -6,7 +6,21 @@
   homebrew = {
       enable = true;
       casks = [
+        "1password"
+        "1password-cli"
+        "beekeeper-studio"
+        "discord"
+        "elgato-stream-deck"
+        "hammerspoon"
+        "imageoptim"
+        "insomnia"
+        "monodraw"
+        "raycast"
+        "slack"
+        "spotify"
         "wezterm"
+        "uhk-agent"
+        "yubico-yubikey-manager"
       ];
   };
 
