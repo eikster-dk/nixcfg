@@ -31,6 +31,7 @@
              ./modules/direnv.nix
              ./modules/lsd.nix
              ./modules/fzf.nix
+             ./modules/gh.nix
              ./modules/git.nix
            ];
         };
