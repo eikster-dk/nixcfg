@@ -29,7 +29,7 @@
              ./modules/home.nix
              ./modules/bat.nix
              ./modules/direnv.nix
-             ./modules/exa.nix
+             ./modules/lsd.nix
              ./modules/fzf.nix
              ./modules/git.nix
            ];
