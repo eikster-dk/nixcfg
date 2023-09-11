@@ -29,6 +29,7 @@
              ./modules/home.nix
              ./modules/bat.nix
              ./modules/direnv.nix
+             ./modules/editorconfig.nix
              ./modules/lsd.nix
              ./modules/fzf.nix
              ./modules/gh.nix
