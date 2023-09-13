@@ -37,6 +37,7 @@
              ./modules/git.nix
              ./modules/pkgs.nix
              ./modules/starship.nix
+             ./modules/zoxide.nix
            ];
         };
      };
