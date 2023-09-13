@@ -35,6 +35,7 @@
              ./modules/fzf.nix
              ./modules/gh.nix
              ./modules/git.nix
+             ./modules/pkgs.nix
              ./modules/starship.nix
            ];
         };
