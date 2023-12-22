@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     userName = "Eik Emil Bengtsson";
-    userEmail = "git.noreply@eikc.dk";
+    userEmail = "git.noreply@e16n.dev";
     signing = {
       key = "5C4F759C5D02EC13B5665A287ECE01F9636DCAA5";
       signByDefault = true;
