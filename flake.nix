@@ -40,6 +40,7 @@
              ./modules/fzf.nix
              ./modules/gh.nix
              ./modules/git.nix
+             ./modules/gpg.nix
              ./modules/pkgs.nix
              ./modules/starship.nix
              ./modules/yubikeys.nix
