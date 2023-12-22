@@ -3,10 +3,6 @@
     enable = true;
     userName = "Eik Emil Bengtsson";
     userEmail = "git.noreply@e16n.dev";
-    signing = {
-      key = "5C4F759C5D02EC13B5665A287ECE01F9636DCAA5";
-      signByDefault = true;
-    };
     includes = [
       {
         contents = {
@@ -38,6 +34,13 @@
       "*.log"
     ];
     extraConfig = {
+      user = {
+        signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIq+zookh594RW+ltkDYWDAvyzgDtzEGdQFj3U4tvfit";
+      };
+      gpg.format = "ssh";
+      gpg.ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      commit.gpgsign = true;
+
       pull = { ff = "only"; };
       push = {
         autoSetupRemote = true;
