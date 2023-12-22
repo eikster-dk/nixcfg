@@ -27,6 +27,7 @@
            modules = [
              ./modules/fish
              ./modules/k9s
+             ./modules/neovim
              ./modules/wezterm/default.nix
              ./modules/home.nix
              ./modules/bat.nix
