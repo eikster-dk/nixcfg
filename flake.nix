@@ -34,6 +34,7 @@
              ./modules/bat.nix
              ./modules/direnv.nix
              ./modules/editorconfig.nix
+             ./modules/go.nix
              ./modules/lazygit.nix
              ./modules/lsd.nix
              ./modules/fzf.nix
