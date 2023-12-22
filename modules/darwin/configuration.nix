@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   services = { nix-daemon = { enable = true; }; };
   nix.package = pkgs.nix;
-  nix.settings.trusted-users = [ "root" "eikchristensen" ];
+  nix.settings.trusted-users = [ "root" "eikster" ];
 
   homebrew = {
       enable = true;
@@ -87,13 +87,6 @@
               "WebKitDeveloperExtras" = true;
           };
           "com.apple.ImageCapture" = { "disableHotPlug" = true; };
-          "com.apple.Safari" = {
-              "IncludeInternalDebugMenu" = true;
-              "IncludeDevelopMenu" = true;
-              "WebKitDeveloperExtrasEnabledPreferenceKey" = true;
-              "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" =
-                  true;
-         };
        };
      };
   };

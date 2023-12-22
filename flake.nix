@@ -14,14 +14,14 @@
     };
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-     darwinConfigurations."Eiks-MacBook-Pro-2" = darwin.lib.darwinSystem {
+     darwinConfigurations."eikster-mbp" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./modules/darwin/configuration.nix
         ];
      };
      homeConfigurations = {
-        "eikchristensen@Eiks-MacBook-Pro-2" = home-manager.lib.homeManagerConfiguration {
+        "eikster@eikster-mbp" = home-manager.lib.homeManagerConfiguration {
            pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
            extraSpecialArgs = { inherit inputs; };
            modules = [

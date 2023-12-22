@@ -1,8 +1,8 @@
 { pkgs, ... }: {
-  home.username = "eikchristensen";
-  home.homeDirectory = "/Users/eikchristensen";
+  home.username = "eikster";
+  home.homeDirectory = "/Users/eikster";
   programs.home-manager.enable = true;
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   home.sessionVariables = {
       EDITOR = "nvim";
       PROJECTS = "$HOME/code";
