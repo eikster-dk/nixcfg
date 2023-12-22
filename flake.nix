@@ -29,6 +29,7 @@
              ./modules/k9s
              ./modules/neovim
              ./modules/wezterm/default.nix
+             ./modules/tmux
              ./modules/home.nix
              ./modules/bat.nix
              ./modules/direnv.nix
