@@ -25,6 +25,7 @@
            pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
            extraSpecialArgs = { inherit inputs; };
            modules = [
+             ./modules/fish
              ./modules/k9s
              ./modules/wezterm/default.nix
              ./modules/home.nix
