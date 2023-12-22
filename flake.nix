@@ -42,6 +42,7 @@
              ./modules/git.nix
              ./modules/gpg.nix
              ./modules/pkgs.nix
+             ./modules/ssh.nix
              ./modules/starship.nix
              ./modules/yubikeys.nix
              ./modules/zoxide.nix
