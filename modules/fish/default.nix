@@ -42,6 +42,10 @@
       gwls = "git worktree list";
       gui = "lazygit";
 
+      #ls
+      lsa = "lsd -al --header";
+
+
       # go
       gmt = "go mod tidy";
       grm = "go run ./...";
