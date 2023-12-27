@@ -17,6 +17,7 @@
     nodejs_20 #consider moving to nodenv?
     ripgrep
     tree
+    ulid
     zk
   ];
 }
