@@ -18,4 +18,14 @@ return {
       "yaml",
     },
   },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+
+    -- Templ settings
+    vim.filetype.add({
+      extension = {
+        templ = "templ",
+      },
+    })
+  end,
 }
