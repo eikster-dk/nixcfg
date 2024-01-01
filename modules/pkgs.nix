@@ -7,6 +7,7 @@
   };
   home.packages = with pkgs; [
     (pkgs.callPackage ../packages/scripts/default.nix { })
+    air
     comma
     fd
     go-task
