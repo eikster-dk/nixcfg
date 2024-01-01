@@ -16,6 +16,7 @@
     ngrok
     nodejs_20 #consider moving to nodenv?
     ripgrep
+    tailwindcss
     tree
     ulid
     zk
