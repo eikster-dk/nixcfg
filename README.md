@@ -29,4 +29,8 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
 
-
+### flake support
+add the following to ~/.config/nix/nix.config
+```shell
+experimental-features = nix-command flakes
+```
