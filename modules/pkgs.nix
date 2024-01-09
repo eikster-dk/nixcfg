@@ -9,6 +9,11 @@
     (pkgs.callPackage ../packages/scripts/default.nix { })
     air
     comma
+    (with dotnetCorePackages; combinePackages [
+      sdk_6_0
+      sdk_7_0
+      sdk_8_0
+    ])
     fd
     go-task
     hurl
