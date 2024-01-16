@@ -13,7 +13,7 @@
         "discord"
         "elgato-stream-deck"
         "hammerspoon"
-        "inkdrop"
+        "obsidian"
         "raycast"
         "slack"
         "spotify"
