@@ -9,6 +9,7 @@ return {
           hide_hidden = false,
           hide_by_name = {
             ".git",
+            ".templ.go",
           },
         },
       },
