@@ -31,6 +31,7 @@
              ./modules/wezterm/default.nix
              ./modules/tmux
              ./modules/home.nix
+             ./modules/aws.nix
              ./modules/bat.nix
              ./modules/direnv.nix
              ./modules/editorconfig.nix
