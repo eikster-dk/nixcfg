@@ -9,6 +9,9 @@
       }
     ];
     shellAliases = {
+      # Assume TODO: fix the granted assume alias correctly
+      assume = "source /Users/eikster/.nix-profile/share/assume.fish";
+
       # docker
       d = "docker";
 
@@ -45,7 +48,6 @@
       #ls
       lsa = "lsd -al --header";
 
-
       # go
       gmt = "go mod tidy";
       grm = "go run ./...";
@@ -58,10 +60,6 @@
       ta = "tmux-new";
     };
   };
-
-#  xdg.configFile."fish/functions" = {
-#    source = config.lib.file.mkOutOfStoreSymlink ./functions;
-#  };
 
   xdg.configFile."fish/themes/Catppuccin Mocha.theme" = {
     source = pkgs.fetchurl {

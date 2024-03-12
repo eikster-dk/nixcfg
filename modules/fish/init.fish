@@ -11,4 +11,3 @@ fish_add_path -p \
 if test -f ~/.localrc.fish
     source ~/.localrc.fish
 end
-
