@@ -7,20 +7,20 @@
   };
   home.packages = with pkgs; [
     (pkgs.callPackage ../packages/scripts/default.nix { })
+    (pkgs.callPackage ../packages/granted/default.nix { })
     air
+    aws-sso-cli
+    colmena
     comma
-    (with dotnetCorePackages; combinePackages [
-      sdk_6_0
-      sdk_7_0
-      sdk_8_0
-    ])
+    dogdns
     fd
     go-task
     hurl
     jq
     karabiner-elements
     ngrok
-    nodejs_20 #consider moving to nodenv?
+    nodejs_20
+    nodePackages.pnpm
     ripgrep
     sqlc
     tailwindcss
