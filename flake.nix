@@ -35,13 +35,12 @@
              ./modules/bat.nix
              ./modules/direnv.nix
              ./modules/editorconfig.nix
-             ./modules/go.nix
-             ./modules/lazygit.nix
-             ./modules/lsd.nix
              ./modules/fzf.nix
              ./modules/gh.nix
              ./modules/git.nix
-             ./modules/gpg.nix
+             ./modules/go.nix
+             ./modules/lazygit.nix
+             ./modules/lsd.nix
              ./modules/pkgs.nix
              ./modules/ssh.nix
              ./modules/starship.nix
