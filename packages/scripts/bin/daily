@@ -1,0 +1,32 @@
+#!/usr/bin/env fish
+
+set today (date +"%Y-%m-%d")
+set tomorrow (date -u -v +1d +"%Y-%m-%d")
+set yesterday (date -u -v -1d +"%Y-%m-%d")
+set file "$SECOND_BRAIN/periodic-notes/daily-notes/"(date +"%Y-%m-%d").md
+
+cd "$SECOND_BRAIN" || exit
+
+function create_daily
+    touch "$file"
+
+    # Format the file with the daily template
+    echo "# $today" >"$file"
+    echo "" >>"$file"
+    echo "[[$yesterday]] - [[$tomorrow]]" >>"$file"
+    echo "" >>"$file"
+    echo "## Intention" >>"$file"
+    echo "" >>"$file"
+    echo "What do I want to achieve today?" >>"$file"
+    echo "" >>"$file"
+    echo "## Log" >>"$file"
+    echo "" >>"$file"
+    echo "## Reflections over [[$yesterday]]" >>"$file"
+end
+
+if not test -f "$file"
+    echo "File does not exist, creating new daily note."
+    create_daily
+end
+
+nvim "$file"
