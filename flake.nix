@@ -12,8 +12,13 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, agenix, ... }: {
      darwinConfigurations."eikster-mbp" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [

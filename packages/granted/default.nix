@@ -42,3 +42,4 @@ buildGoModule rec {
       --replace /bin/fish ${fish}/bin/fish
   '';
 }
+
