@@ -11,8 +11,8 @@ return {
   enable_scroll_bar = false,
 
   color_scheme = "Catppuccin Mocha",
-  font = wezterm.font('JetBrains Mono', { weight = 'Bold', italic = true }),
-  font_size = 16, 
+  font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = true }),
+  font_size = 18,
   harfbuzz_features = {
     "zero=1",
     "ss01=1",
