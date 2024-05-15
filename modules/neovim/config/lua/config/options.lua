@@ -4,3 +4,4 @@
 --
 local opt = vim.opt
 opt.clipboard = ""
+opt.swapfile = false
