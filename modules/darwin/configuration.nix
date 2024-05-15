@@ -11,15 +11,18 @@
         "arc"
         "beekeeper-studio"
         "discord"
+        "docker"
         "elgato-stream-deck"
         "hammerspoon"
         "obsidian"
+        "polypane"
         "raycast"
         "slack"
         "spotify"
+        "tableplus"
         "wezterm"
         "uhk-agent"
-        "yubico-yubikey-manager"
+        "zed"
       ];
   };
 
