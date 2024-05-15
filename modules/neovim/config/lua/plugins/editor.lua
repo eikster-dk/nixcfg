@@ -1,22 +1,14 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_hidden = false,
-          hide_by_name = {
-            ".git",
-            "*_templ.go",
-          },
-        },
-      },
-      window = {
-        position = "current",
-      },
+    "stevearc/oil.nvim",
+    opts = {},
+    keys = {
+      { "<leader>fe", "<cmd>Oil<cr>", desc = "open oil file explorer" },
     },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
   },
   {
     "nvim-telescope/telescope.nvim",
