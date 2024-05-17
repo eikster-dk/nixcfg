@@ -1,7 +1,11 @@
 return {
   {
     "stevearc/oil.nvim",
-    opts = {},
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
     keys = {
       { "<leader>fe", "<cmd>Oil<cr>", desc = "open oil file explorer" },
     },
