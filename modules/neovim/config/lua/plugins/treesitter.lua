@@ -3,8 +3,9 @@ return {
   opts = {
     ensure_installed = {
       "bash",
-      "html",
       "go",
+      "html",
+      "hurl",
       "javascript",
       "json",
       "lua",
@@ -24,6 +25,7 @@ return {
     -- Templ settings
     vim.filetype.add({
       extension = {
+        hurl = "hurl",
         templ = "templ",
       },
     })
