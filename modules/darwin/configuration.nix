@@ -14,6 +14,7 @@
         "docker"
         "elgato-stream-deck"
         "hammerspoon"
+        "httpie"
         "obsidian"
         "polypane"
         "raycast"
