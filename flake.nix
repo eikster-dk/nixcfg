@@ -50,6 +50,7 @@
              ./modules/ssh.nix
              ./modules/starship.nix
              ./modules/top.nix
+             ./modules/yazi.nix
              ./modules/yubikeys.nix
              ./modules/zoxide.nix
            ];
