@@ -23,11 +23,12 @@ in
         oil-nvim
 
         # UI
-        lualine-nvim
         catppuccin-nvim
-        noice-nvim
-        indent-blankline-nvim
         gitsigns-nvim
+        indent-blankline-nvim
+        lualine-nvim
+        noice-nvim
+        nvim-web-devicons
         which-key-nvim
 
         telescope-nvim
