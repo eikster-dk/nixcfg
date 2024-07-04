@@ -6,5 +6,6 @@
   home.sessionVariables = {
       EDITOR = "nvim";
       PROJECTS = "$HOME/code";
+      SECOND_BRAIN = "/Users/eikster/Library/Mobile Documents/iCloud~md~obsidian/Documents/second brain";
   };
 }
