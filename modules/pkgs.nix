@@ -17,7 +17,9 @@
     go-task
     hurl
     jq
+    k6
     karabiner-elements
+    lazydocker
     ngrok
     nodejs_20
     nodePackages.pnpm
