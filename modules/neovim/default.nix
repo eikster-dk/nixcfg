@@ -1,14 +1,14 @@
 { config, pkgs, lib, ... }:
 let
-  fromGithub = owner: repo: ref: hash:
+  fromGithub = owner: repo: ref: sha:
     pkgs.vimUtils.buildVimPlugin {
-      pname = "${lib.strings.sanitizeDerivationName repo}";
+      pname = "${repo}";
       version = ref;
-      src = pkgs.fetchFrom {
+      src = pkgs.fetchFromGitHub {
         owner = owner;
         repo = repo;
         rev = ref;
-        hash = hash;
+        sha256 = sha;
       };
     };
 in
@@ -19,6 +19,8 @@ in
       vimAlias = true;
       vimdiffAlias = true;
       plugins = with pkgs.vimPlugins; [
+        (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
+
         harpoon2
         oil-nvim
 
