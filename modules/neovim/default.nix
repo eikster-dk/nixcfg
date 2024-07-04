@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 let
   fromGithub = owner: repo: ref: sha:
     pkgs.vimUtils.buildVimPlugin {
@@ -23,6 +23,8 @@ in
 
         harpoon2
         oil-nvim
+        trouble-nvim
+        cloak-nvim
 
         # UI
         catppuccin-nvim
