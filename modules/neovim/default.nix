@@ -25,6 +25,7 @@ in
         oil-nvim
         trouble-nvim
         cloak-nvim
+        flash-nvim
 
         # UI
         catppuccin-nvim
