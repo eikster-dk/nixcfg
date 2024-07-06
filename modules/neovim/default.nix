@@ -103,6 +103,7 @@ in
       cargo
       delve
       gofumpt
+      golangci-lint
       golangci-lint-langserver
       nil # nix lsp
       nixpkgs-fmt
