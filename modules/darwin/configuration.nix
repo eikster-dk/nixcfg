@@ -13,6 +13,7 @@
         "discord"
         "docker"
         "elgato-stream-deck"
+        "figma"
         "hammerspoon"
         "httpie"
         "obsidian"
