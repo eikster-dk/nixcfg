@@ -38,6 +38,7 @@ in
 
         telescope-nvim
         telescope-github-nvim
+        telescope-fzf-native-nvim
 
         # Coding
         nvim-lspconfig

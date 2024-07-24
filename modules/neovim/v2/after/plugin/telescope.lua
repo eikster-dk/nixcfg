@@ -28,16 +28,13 @@ telescope.setup({
 
 telescope.load_extension("gh")
 telescope.load_extension("harpoon")
+telescope.load_extension("fzf")
 
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader>ff", function()
-  builtin.find_files({
-    find_command = { "rg", "--hidden", "--files", "--smart-case", "--glob=!.git" },
-  })
-end, opts)
 
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>fc", builtin.commands, opts)
