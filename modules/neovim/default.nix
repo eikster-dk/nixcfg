@@ -52,6 +52,7 @@ in
         cmp-nvim-lsp
         cmp-nvim-lsp-signature-help
         cmp_luasnip
+        nvim-ts-autotag
 
         fidget-nvim
         luasnip
