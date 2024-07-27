@@ -30,6 +30,7 @@
            pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
            extraSpecialArgs = { inherit inputs; };
            modules = [
+             ./modules/aerospace
              ./modules/fish
              ./modules/k9s
              ./modules/neovim

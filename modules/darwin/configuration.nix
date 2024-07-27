@@ -25,6 +25,8 @@
         "wezterm"
         "uhk-agent"
         "zed"
+
+        "nikitabobko/tap/aerospace"
       ];
   };
 
