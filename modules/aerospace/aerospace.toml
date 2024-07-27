@@ -1,0 +1,60 @@
+after-login-command = []
+after-startup-command = []
+start-at-login = true
+
+[mode.main.binding]
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+alt-b = 'workspace B'
+alt-c = 'workspace C'
+alt-d = 'workspace D'
+alt-e = 'workspace E'
+alt-f = 'workspace F'
+alt-g = 'workspace G'
+alt-i = 'workspace I'
+alt-m = 'workspace M'
+alt-n = 'workspace N'
+alt-o = 'workspace O'
+alt-p = 'workspace P'
+alt-q = 'workspace Q'
+alt-r = 'workspace R'
+alt-s = 'workspace S'
+alt-t = 'workspace T'
+alt-u = 'workspace U'
+alt-v = 'workspace V'
+alt-w = 'workspace W'
+alt-x = 'workspace X'
+alt-y = 'workspace Y'
+alt-z = 'workspace Z'
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace W'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.firstversionist.polypane'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace D'
+
+
