@@ -120,7 +120,7 @@ lspconfig.html.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "html", "templ" },
-  cmd = { "html-languageserver", "--stdio" },
+  cmd = { "vscode-html-language-server", "--stdio" },
 })
 
 lspconfig.tailwindcss.setup({
