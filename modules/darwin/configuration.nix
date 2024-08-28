@@ -9,7 +9,6 @@
         "1password"
         "1password-cli"
         "arc"
-        "beekeeper-studio"
         "discord"
         "docker"
         "elgato-stream-deck"
