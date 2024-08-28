@@ -9,6 +9,7 @@
         "1password"
         "1password-cli"
         "arc"
+        "bruno"
         "discord"
         "docker"
         "elgato-stream-deck"
