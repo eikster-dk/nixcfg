@@ -127,6 +127,6 @@ in
   ];
 
   xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./v2;
+    source = ./v2;
   };
 }
