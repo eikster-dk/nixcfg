@@ -6,6 +6,9 @@ local map = function(buf, keys, func, desc)
   vim.keymap.set("n", keys, func, { buffer = buf, desc = "LSP: " .. desc })
 end
 
+local vmap = function(buf, keys, func, desc)
+  vim.keymap.set("v", keys, func, { buffer = buf, desc = "LSP: " .. desc })
+end
 ---@param client vim.lsp.Client LSP client
 ---@param bufnr number Buffer number
 ---@diagnostic disable: unused-local
@@ -42,6 +45,7 @@ local on_attach = function(client, bufnr)
   -- Execute a code action, usually your cursor needs to be on top of an error
   -- or a suggestion from your LSP for this to activate.
   map(bufnr, "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+  vmap(bufnr, "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
   -- Opens a popup that displays documentation about the word under your cursor
   --  See `:help K` for why this keymap.
