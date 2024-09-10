@@ -20,6 +20,7 @@ in
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
+      (fromGithub "echasnovski" "mini.ai" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
 
       harpoon2
       oil-nvim
