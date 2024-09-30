@@ -105,4 +105,6 @@ run = 'move-node-to-workspace T'
 if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace F'
 
-# comioio.tinyapp.TablePlus
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = 'move-node-to-workspace B'
