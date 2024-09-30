@@ -24,6 +24,7 @@
     nodejs_20
     nodePackages.pnpm
     ripgrep
+    rsync
     sqlc
     tailwindcss
     tree
