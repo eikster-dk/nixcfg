@@ -35,5 +35,26 @@
         ];
       };
     };
+    nixosConfigurations = {
+      nixbook = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixbook/config.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users."eikster" = import ./hosts/nixbook/home.nix;
+          }
+        ];
+      };
+    };
   };
 }
