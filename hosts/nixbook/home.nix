@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 let
@@ -18,5 +19,10 @@ in
   home.username = "eikster";
   home.homeDirectory = "/home/eikster";
   home.stateVersion = "24.05";
+
+  imports = [
+    ../../modules/git.nix
+    ../../modules/neovim
+  ];
 }
 

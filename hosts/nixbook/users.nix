@@ -10,7 +10,7 @@ in
     "eikster" = {
       homeMode = "755";
       isNormalUser = true;
-      description = "eikster user";
+      description = "Eik Bengtsson";
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -20,7 +20,10 @@ in
       ];
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;
-      packages = with pkgs; [];
+      packages = with pkgs; [
+        _1password-gui
+      	_1password
+      ];
     };
   };
 }
