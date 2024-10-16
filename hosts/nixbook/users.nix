@@ -18,7 +18,7 @@ in
         "scanner"
         "lp"
       ];
-      shell = pkgs.bash;
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
         kitty

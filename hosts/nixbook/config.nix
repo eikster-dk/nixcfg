@@ -15,6 +15,7 @@
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ./hardware.nix
       ./users.nix
+      ./fonts.nix
     ];
 
   # Bootloader.
@@ -87,8 +88,14 @@
     #media-session.enable = true;
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  programs = {
+    firefox = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -96,9 +103,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    brightnessctl
     greetd.tuigreet
   ];
-
 
   services = {
     greetd = {
@@ -112,9 +119,6 @@
       };
     };
   };
-
-  programs.hyprland.enable = true;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
