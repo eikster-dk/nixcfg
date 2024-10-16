@@ -10,6 +10,7 @@ in
   nixpkgs = {
     config = {
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "1password-gui"
         "1password"
       ];
     };
@@ -23,6 +24,8 @@ in
   imports = [
     ../../modules/git.nix
     ../../modules/neovim
+    ../../modules/wezterm
+    ../../modules/ssh.nix
   ];
 }
 

@@ -10,7 +10,7 @@ in
     "eikster" = {
       homeMode = "755";
       isNormalUser = true;
-      description = "Eik Bengtsson";
+      description = "eikster";
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -21,6 +21,7 @@ in
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
+        kitty
         _1password-gui
       	_1password
       ];
