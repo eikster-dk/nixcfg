@@ -1,4 +1,8 @@
-{ ... }: {
+{ pkgs, lib, ... }:
+let
+  sshPath = (if pkgs.stdenv.isDarwin then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign" else "${lib.getExe' pkgs._1password-gui "op-ssh-sign"}");
+in
+{
   programs.git = {
     enable = true;
     userName = "Eik Emil Bengtsson";
@@ -38,7 +42,7 @@
         signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIq+zookh594RW+ltkDYWDAvyzgDtzEGdQFj3U4tvfit";
       };
       gpg.format = "ssh";
-      gpg.ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      gpg.ssh.program = "${sshPath}";
       commit.gpgsign = true;
 
       pull = { ff = "only"; };
