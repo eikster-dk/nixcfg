@@ -22,40 +22,18 @@ in
 
 
   imports = [
-    ../../modules/fish
-    ../../modules/fzf.nix
-    ../../modules/git.nix
-    ../../modules/go.nix
-    ../../modules/hyprland
-    ../../modules/lazygit.nix
-    ../../modules/lsd.nix
-    ../../modules/neovim
-    ../../modules/starship.nix
-    ../../modules/wezterm
-    ../../modules/ssh.nix
-    ../../modules/tmux
-    ../../modules/zoxide.nix
+    ../../home/features/cli
+    ../../home/features/hyprland
   ];
-
-  home.packages = with pkgs; [
-    (pkgs.callPackage ../../packages/scripts/default.nix { })
-    air
-    comma
-    dogdns
-    fd
-    go-task
-    jq
-    lazydocker
-    ngrok
-    nodejs_20
-    ripgrep
-    rsync
-    sqlc
-    tailwindcss
-    tree
-    ulid
-    zk
-  ];
+  features = {
+    cli = {
+      fish.enable = true;
+      fzf.enable = true;
+      fastfetch.enable = true;
+      nvim.enable = true;
+      tmux.enable = true;
+    };
+  };
 
 }
 
