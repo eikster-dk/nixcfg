@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, config, lib, ... }:
 with lib; let
   cfg = config.features.cli.tmux;
 in

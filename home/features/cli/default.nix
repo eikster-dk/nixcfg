@@ -10,6 +10,7 @@
     ./git.nix
     ./go.nix
     ./lazygit.nix
+    ./lsd.nix
     ./neovim
     ./fastfetch.nix
     ./ssh.nix
@@ -22,13 +23,6 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-  };
-
-  programs.lsd = {
-    enable = true;
-    enableFishIntegration = true;
-    enableBashIntegration = true;
-    extraOptions = [ "-l" "--icons" "--git" "-a" ];
   };
 
   programs.bat = { enable = true; };

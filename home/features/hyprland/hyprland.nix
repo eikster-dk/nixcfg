@@ -31,15 +31,15 @@ in
         general = {
           border_size = 3;
 
-          col.active_border = "$mauve $flamingo 90deg";
-          col.inactive_border = "$subtext0";
+          "col.active_border" = "$mauve $flamingo 90deg";
+          "col.inactive_border" = "$subtext0";
 
           resize_on_border = true;
 
           gaps_in = 2;
           gaps_out = 4;
 
-          layout = dwindle;
+          layout = "dwindle";
 
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false;

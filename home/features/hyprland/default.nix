@@ -2,8 +2,8 @@
   imports = [
     ./fonts.nix
     ./hyprland.nix
-    ./wayland.nix
-    ./wofy.nix
+    ./waybar.nix
+    ./wofi.nix
   ];
 
   home.packages = with pkgs; [

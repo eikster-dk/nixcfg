@@ -25,15 +25,21 @@ in
     ../../home/features/cli
     ../../home/features/hyprland
   ];
+
   features = {
     cli = {
       fish.enable = true;
-      fzf.enable = true;
+     #fzf.enable = true;
       fastfetch.enable = true;
       nvim.enable = true;
       tmux.enable = true;
     };
+    hyprland = { 
+        enable = true;
+        waybar.enable = true;
+        wofi.enable = true;
+        fonts.enable = true;
+    };
   };
-
 }
 
