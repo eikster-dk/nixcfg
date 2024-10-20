@@ -5,10 +5,16 @@ in
 {
   programs.ssh = {
     enable = true;
-    serverAliveInterval = 60;
     extraConfig = ''
       Host *
         IdentityAgent "${onePassPath}"
     '';
+    serverAliveInterval = 60;
+    matchBlocks = {
+      "hetzner-dedi1" = {
+        identityFile = "~/.ssh/hetzner-dedi1.pub";
+        identitiesOnly = true;
+      };
+    };
   };
 }
