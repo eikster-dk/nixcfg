@@ -75,14 +75,14 @@ in
           border-radius: 1rem;
         }
 
-        #custom-music,
         #tray,
         #backlight,
         #clock,
         #battery,
-        #pulseaudio,
-        #custom-lock,
-        #custom-power {
+        #network,
+        #cpu,
+        #memory,
+        #pulseaudio {
           background-color: @surface0;
           padding: 0.5rem 1rem;
           margin: 5px 0;
@@ -151,9 +151,14 @@ in
           passthrough = false;
           gtk-layer-shell = true;
           height = 0;
-          modules-left = [ "clock" "custom/weather" "hyprland/workspaces" ];
+          modules-left = [ "clock" "hyprland/workspaces" ];
           modules-center = [ "hyprland/window" ];
           modules-right = [
+            "pulseaudio"
+            "network"
+            "cpu"
+            "memory"
+            "battery"
             "tray"
           ];
 
@@ -184,12 +189,15 @@ in
               "4" = [ ];
             };
           };
-          "custom/weather" = {
-            format = "{}°C";
-            tooltip = true;
-            interval = 3600;
-            exec = "wttrbar --location Pockau-Lengefeld";
-            return-type = "json";
+          cpu = {
+            format = "{usage}% ";
+          };
+          memory = {
+            format = "{}% ";
+          };
+          network = {
+            "format-ethernet" = "{ifname}: {ipaddr}/{cidr} ";
+            "format-disconnected" = "Disconnected ⚠";
           };
           tray = {
             icon-size = 13;

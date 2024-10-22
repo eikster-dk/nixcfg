@@ -29,16 +29,18 @@ in
   features = {
     cli = {
       fish.enable = true;
-     #fzf.enable = true;
       fastfetch.enable = true;
       nvim.enable = true;
       tmux.enable = true;
     };
-    hyprland = { 
-        enable = true;
-        waybar.enable = true;
-        wofi.enable = true;
-        fonts.enable = true;
+    hyprland = {
+      enable = true;
+      hyprlock.enable = true;
+      hypridle.enable = true;
+      hyprpaper.enable = true;
+      waybar.enable = true;
+      wofi.enable = true;
+      fonts.enable = true;
     };
   };
 }

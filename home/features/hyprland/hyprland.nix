@@ -11,10 +11,18 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+      extraConfig = ''
+        monitor=,preferred,auto,1.6
+      '';
+
       settings = {
         xwayland = {
           force_zero_scaling = true;
         };
+
+        exec-once = [
+          "waybar"
+        ];
 
         input = {
           kb_layout = "dk";
@@ -90,7 +98,9 @@ in
         bind = [
           "$mainMod, return, exec, kitty -e fish -c 'fastfetch; exec fish'"
           "$mainMod, space, exec, $menu"
-          "$mainMod, q, killactive"
+          "$mainMod, c, killactive"
+          "$SUPER_SHIFT, l, exec, hyprlock"
+          "$SUPER_SHIFT, R, exec, hyprctl reload"
 
           "$mainMod, h, movefocus, l"
           "$mainMod, l, movefocus, r"
