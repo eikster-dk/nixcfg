@@ -9,6 +9,7 @@
     ./gh.nix
     ./git.nix
     ./go.nix
+    ./kitty.nix
     ./lazygit.nix
     ./lsd.nix
     ./neovim
