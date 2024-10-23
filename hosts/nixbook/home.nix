@@ -30,6 +30,7 @@ in
     cli = {
       fish.enable = true;
       fastfetch.enable = true;
+      kitty.enable = true;
       nvim.enable = true;
       tmux.enable = true;
     };
