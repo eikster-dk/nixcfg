@@ -13,14 +13,15 @@ in
     programs.kitty = {
       enable = true;
       font = {
-        name = "JetBrains Mono";
+        name = "JetBrainsMono Nerd Font";
         size = 14;
-        package = pkgs.jetbrains-mono;
+        package = pkgs.nerdfonts;
       };
       theme = "Catppuccin-Mocha";
       shellIntegration.enableFishIntegration = true;
       settings = {
-        background_opacity = 0.9;
+        disable_ligatures = "never";
+        background_opacity = "0.9";
       };
     };
   };
