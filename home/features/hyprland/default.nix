@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./dunst.nix
     ./fonts.nix
     ./hyprland.nix
     ./hypridle.nix

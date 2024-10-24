@@ -11,6 +11,7 @@ in
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
         "1password-gui"
         "1password"
+        "polypane"
       ];
     };
   };
@@ -36,6 +37,7 @@ in
     };
     hyprland = {
       enable = true;
+      dunst.enable = true;
       hyprlock.enable = true;
       hypridle.enable = true;
       hyprpaper.enable = true;
