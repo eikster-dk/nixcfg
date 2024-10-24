@@ -22,7 +22,6 @@ in
 
         exec-once = [
           "waybar"
-          "& blueman-applet"
         ];
 
         input = {

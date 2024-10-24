@@ -75,7 +75,7 @@ in
           border-radius: 1rem;
         }
 
-        #tray,
+        #bluetooth,
         #backlight,
         #clock,
         #battery,
@@ -156,10 +156,10 @@ in
           modules-right = [
             "pulseaudio"
             "network"
+            "bluetooth"
             "cpu"
             "memory"
             "battery"
-            "tray"
           ];
 
           "hyprland/window" = {
@@ -195,9 +195,45 @@ in
           memory = {
             format = "{}% ";
           };
+          "pulseaudio" = {
+            # "scroll-step" = 1, // %, can be a float
+            "format" = "{icon}  {volume}%";
+            "format-bluetooth" = " {volume}% {icon} {format_source}";
+            "format-bluetooth-muted" = " {icon} {format_source}";
+            "format-muted" = " {format_source}";
+            "format-source" = "{volume}% ";
+            "format-source-muted" = "";
+            "format-icons" = {
+              "headphone" = " ";
+              "hands-free" = " ";
+              "headset" = " ";
+              "phone" = " ";
+              "portable" = " ";
+              "car" = " ";
+              "default" = [ "" "" "" ];
+            };
+            "on-click" = "kitty --class floating -e pulsemixer";
+          };
           network = {
-            "format-ethernet" = "{ifname}: {ipaddr}/{cidr} ";
-            "format-disconnected" = "Disconnected ⚠";
+            "format" = "{ifname}";
+            "format-wifi" = "   {signalStrength}%";
+            "format-ethernet" = "  {ifname}";
+            "format-disconnected" = "Disconnected";
+            "tooltip-format" = " {ifname} via {gwaddri}";
+            "tooltip-format-wifi" = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}";
+            "tooltip-format-ethernet" = " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}";
+            "tooltip-format-disconnected" = "Disconnected";
+            "max-length" = 50;
+            "on-click" = "kitty --class floating -e nmtui";
+            "on-click-right" = "nm-applet --indicator";
+          };
+          "bluetooth" = {
+            "format" = " {status}";
+            "format-disabled" = "";
+            "format-off" = "";
+            "interval" = 30;
+            "on-click" = "blueman-manager";
+            "format-no-controller" = "";
           };
           tray = {
             icon-size = 13;
