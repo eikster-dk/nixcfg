@@ -88,6 +88,14 @@
     #media-session.enable = true;
   };
 
+  ## bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
   programs = {
     firefox = {
       enable = true;
