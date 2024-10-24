@@ -82,6 +82,7 @@ in
         #network,
         #cpu,
         #memory,
+        #group-hardware,
         #pulseaudio {
           background-color: @surface0;
           padding: 0.5rem 1rem;
@@ -157,9 +158,8 @@ in
             "pulseaudio"
             "network"
             "bluetooth"
-            "cpu"
-            "memory"
-            "battery"
+            "backlight"
+            "group/hardware"
           ];
 
           "hyprland/window" = {
@@ -188,6 +188,15 @@ in
               "3" = [ ];
               "4" = [ ];
             };
+          };
+          "group/hardware" = {
+            "orientation" = "inherit";
+            "drawer" = {
+              "transition-duration" = 300;
+              "children-class" = "group-hardware";
+              "transition-left-to-right" = false;
+            };
+            "modules" = [ "battery" "memory" "cpu" ];
           };
           cpu = {
             format = "{usage}% ";
@@ -234,6 +243,27 @@ in
             "interval" = 30;
             "on-click" = "blueman-manager";
             "format-no-controller" = "";
+          };
+          "backlight" = {
+            "format" = "{icon} {percent}%";
+            "format-icons" = [
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+            ];
+            "scroll-step" = 1;
           };
           tray = {
             icon-size = 13;
