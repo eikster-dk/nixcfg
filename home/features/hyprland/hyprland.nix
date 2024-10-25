@@ -58,6 +58,7 @@ in
           force_default_wallpaper = false;
         };
 
+
         decoration = {
           rounding = 4;
           blur = {
@@ -95,12 +96,30 @@ in
           workspace_swipe = false;
         };
 
+        windowrulev2 = [
+          "suppressevent maximize, class:.*"
+        ];
+
+        layerrule = [
+          "noanim, wofi"
+        ];
+
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
         "$menu" = "wofi --show drun";
         "$fileManager" = "dolphin";
 
         bind = [
+          ## function keys:
+          # Sound through pactl
+          ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
+          ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
+          ", XF86AudioMut, exec, pulsemixer --toggle-mute"
+
+          # Brightness through brightnessctl
+          ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
+          ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
           "$mainMod, return, exec, kitty -e fish -c 'fastfetch; exec fish'"
           "$mainMod, space, exec, $menu"
           "$mainMod, c, killactive"
@@ -141,9 +160,6 @@ in
         bindm = [
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
-        ];
-
-        windowrule = [
         ];
       };
     };
