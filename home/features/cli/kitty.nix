@@ -21,7 +21,7 @@ in
       shellIntegration.enableFishIntegration = true;
       settings = {
         disable_ligatures = "never";
-        background_opacity = "0.9";
+        background_opacity = "0.8";
       };
     };
   };
