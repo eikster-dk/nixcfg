@@ -53,6 +53,11 @@ in
           allow_tearing = false;
         };
 
+        misc = {
+          disable_hyprland_logo = true;
+          force_default_wallpaper = false;
+        };
+
         decoration = {
           rounding = 4;
           blur = {
