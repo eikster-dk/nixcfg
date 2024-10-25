@@ -113,6 +113,7 @@ in
       gofumpt
       golangci-lint
       golangci-lint-langserver
+      gopls
       nil # nix lsp
       nixpkgs-fmt
       pgformatter
