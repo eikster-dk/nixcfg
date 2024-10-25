@@ -1,11 +1,23 @@
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }:
 let
   inherit (import ./variables.nix);
 in
 {
+  security.pam.services.hyprlock = { };
+  security.polkit.enable = true;
+
+  programs = {
+    _1password.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [
+        "eikster"
+      ];
+    };
+  };
+
   users.users = {
     "eikster" = {
       homeMode = "755";
@@ -21,9 +33,14 @@ in
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
+        (pkgs.callPackage ../../packages/scripts/default.nix { })
+        bruno
+        discord
         kitty
-        _1password-gui
-      	_1password
+        obsidian
+        polypane
+        slack
+        spotify
       ];
     };
   };
