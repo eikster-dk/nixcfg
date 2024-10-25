@@ -124,7 +124,7 @@
       settings = {
         default_session = {
           user = "eikster";
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
         };
       };
     };
