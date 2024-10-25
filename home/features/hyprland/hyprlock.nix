@@ -22,7 +22,7 @@ in
         background = [
           {
             moitor = "";
-            path = "/home/eikster/Pictures/shaded.png";
+            path = "/home/eikster/Pictures/current.jpg";
 
             blur_passes = 1; # 0 disables blurring
             blur_size = 7;

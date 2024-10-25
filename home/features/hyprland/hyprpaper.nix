@@ -11,16 +11,16 @@ in
 
   config = mkIf cfg.enable {
     home.file = {
-      "Pictures/shaded.png".source = ./backgrounds/shaded.png;
+      "Pictures/current.jpg".source = ./backgrounds/car-with-full-moon-background.jpg;
     };
 
     services.hyprpaper = {
       enable = true;
       settings = {
         preload = [
-          "/home/eikster/Pictures/shaded.png"
+          "/home/eikster/Pictures/current.jpg"
         ];
-        wallpaper = ", /home/eikster/Pictures/shaded.png";
+        wallpaper = ", /home/eikster/Pictures/current.jpg";
       };
     };
   };
