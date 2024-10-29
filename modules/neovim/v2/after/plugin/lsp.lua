@@ -9,10 +9,20 @@ end
 local vmap = function(buf, keys, func, desc)
   vim.keymap.set("v", keys, func, { buffer = buf, desc = "LSP: " .. desc })
 end
+
 ---@param client vim.lsp.Client LSP client
 ---@param bufnr number Buffer number
 ---@diagnostic disable: unused-local
 local on_attach = function(client, bufnr)
+  if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
+    local semantic = client.config.capabilities.textDocument.semanticTokens
+    client.server_capabilities.semanticTokensProvider = {
+      full = true,
+      legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
+      range = true,
+    }
+  end
+
   -- Jump to the definition of the word under your cursor.
   --  This is where a variable was first declared, or where a function is defined, etc.
   --  To jump back, press <C-t>.
@@ -85,12 +95,13 @@ lspconfig.gopls.setup({
     gopls = {
       gofumpt = true,
       codelenses = {
-        gc_details = true,
+        gc_details = false,
         generate = true,
         run_govulncheck = true,
         test = true,
         tidy = true,
         upgrade_dependency = true,
+        vendor = true,
       },
       hints = {
         assignVariableTypes = true,
@@ -102,14 +113,17 @@ lspconfig.gopls.setup({
         rangeVariableTypes = true,
       },
       analyses = {
+        fieldalignment = true,
         nilness = true,
         unusedparams = true,
-        unusedvariable = true,
         unusedwrite = true,
         useany = true,
       },
+      usePlaceholders = true,
+      completeFunctionCalls = true,
+      completeUnimported = true,
       staticcheck = true,
-      directoryFilters = { "-.git", "-node_modules" },
+      directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
       semanticTokens = true,
     },
   },
@@ -130,8 +144,26 @@ lspconfig.html.setup({
 lspconfig.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "templ", "javascript", "typescript", "html" },
-  init_options = { userLanguages = { templ = "html" } },
+  filetypes = { "templ", "javascript", "typescript", "html", "go" },
+  init_options = {
+    userLanguages = {
+      templ = "html",
+      go = "html",
+    },
+  },
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          { "Class\\s*:\\s*['\"]([^'\"]*)['\"]", "class\\s*:\\s*['\"]([^'\"]*)['\"]" },
+          { "Class(?:es)?[({]([^)}]*)[)}]", '["`]([^"`]*)["`]' },
+        },
+      },
+      includeLanguages = {
+        templ = "html",
+      },
+    },
+  },
 })
 
 lspconfig.templ.setup({
