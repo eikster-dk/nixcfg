@@ -21,12 +21,11 @@ in
 
         background = [
           {
-            moitor = "";
+            monitor = "";
             path = "/home/eikster/Pictures/current.jpg";
 
             blur_passes = 1; # 0 disables blurring
             blur_size = 7;
-            noise = 1.17e-2;
           }
         ];
 
@@ -67,7 +66,7 @@ in
 
         input-field = {
           monitor = "";
-          size = "300,60";
+          size = "300, 60";
           outline_thickness = 4;
           dots_size = 0.2;
           dots_spacing = 0.2;
