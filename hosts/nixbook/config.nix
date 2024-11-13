@@ -93,7 +93,6 @@
     enable = true;
     powerOnBoot = true;
   };
-
   services.blueman.enable = true;
 
   programs = {
@@ -101,6 +100,23 @@
       enable = true;
     };
     hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+  };
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  ## virtualisation
+  virtualisation = {
+    podman = {
       enable = true;
     };
   };
