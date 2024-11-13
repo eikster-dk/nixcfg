@@ -121,6 +121,12 @@
     };
   };
 
+  # theme
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

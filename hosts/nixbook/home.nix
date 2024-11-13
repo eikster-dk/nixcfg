@@ -21,6 +21,12 @@ in
   home.homeDirectory = "/home/eikster";
   home.stateVersion = "24.05";
 
+  # theme
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
 
   imports = [
     ../../home/features/cli
