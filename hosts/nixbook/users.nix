@@ -35,12 +35,12 @@ in
       packages = with pkgs; [
         (pkgs.callPackage ../../packages/scripts/default.nix { })
         bruno
-        discord
         kitty
         obsidian
         polypane
         slack
         spotify
+        vesktop
       ];
     };
   };
