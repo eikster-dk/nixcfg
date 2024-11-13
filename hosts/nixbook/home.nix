@@ -29,6 +29,7 @@ in
 
   features = {
     cli = {
+      dysk.enable = true;
       fish.enable = true;
       fastfetch.enable = true;
       kitty.enable = true;
