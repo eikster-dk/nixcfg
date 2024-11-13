@@ -3,6 +3,7 @@
     ./aws.nix
     ./bat.nix
     ./direnv.nix
+    ./dysk.nix
     ./editorconfig.nix
     ./fish
     ./fzf.nix
