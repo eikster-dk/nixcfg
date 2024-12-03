@@ -3,6 +3,7 @@
     ./aws.nix
     ./atuin.nix
     ./bat.nix
+    ./devenv.nix
     ./direnv.nix
     ./dysk.nix
     ./editorconfig.nix

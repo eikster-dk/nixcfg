@@ -35,6 +35,7 @@ in
   features = {
     cli = {
       atuin.enable = true;
+      devenv.enable = true;
       dysk.enable = true;
       fish.enable = true;
       fastfetch.enable = true;
