@@ -22,6 +22,7 @@
     ./top.nix
     ./wezterm
     ./yazi.nix
+    ./zellij.nix
   ];
 
   programs.zoxide = {

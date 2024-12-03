@@ -41,6 +41,7 @@ in
       kitty.enable = true;
       nvim.enable = true;
       tmux.enable = true;
+      zellij.enable = true;
     };
     hyprland = {
       enable = true;
