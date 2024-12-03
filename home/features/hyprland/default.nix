@@ -2,6 +2,7 @@
   imports = [
     ./dunst.nix
     ./fonts.nix
+    ./gtk.nix
     ./hyprland.nix
     ./hypridle.nix
     ./hyprpaper.nix
