@@ -1,7 +1,7 @@
 {
   description = "eikster-dk's dotfiles written in nix";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
@@ -33,7 +33,7 @@
     darwinConfigurations."eikster-ftg" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
-	determinate.darwinModules.default
+        determinate.darwinModules.default
         ./hosts/mbp-work/darwin.nix
       ];
     };
