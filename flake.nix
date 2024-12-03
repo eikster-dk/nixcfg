@@ -4,6 +4,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,11 +23,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, darwin, catppuccin, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, darwin, catppuccin, determinate, ... }@inputs: {
     darwinConfigurations."eikster-mbp" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./hosts/mbp-private/darwin.nix
+      ];
+    };
+    darwinConfigurations."eikster-ftg" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+	determinate.darwinModules.default
+        ./hosts/mbp-work/darwin.nix
       ];
     };
     homeConfigurations = {
@@ -35,6 +44,14 @@
         modules = [
           catppuccin.homeManagerModules.catppuccin
           ./hosts/mbp-private/home.nix
+        ];
+      };
+      "eikftg@eikster-ftg" = home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          catppuccin.homeManagerModules.catppuccin
+          ./hosts/mbp-work/home.nix
         ];
       };
     };

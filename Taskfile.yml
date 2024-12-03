@@ -4,14 +4,15 @@ version: '3'
 vars:
   HOSTNAME:
     sh: "hostname -s"
-
+  USERNAME:
+    sh: "whoami"
 tasks:
   update:
     cmds:
       - nix flake update
   apply:
     cmds:
-      - home-manager switch --flake '.#eikster@{{.HOSTNAME}}'
+      - nix run home-manager -- switch --flake '.#{{.USERNAME}}@{{.HOSTNAME}}'
   apply_darwin:
     status:
       - "test $(uname -s) -ne Darwin"
