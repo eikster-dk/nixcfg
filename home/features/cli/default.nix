@@ -19,6 +19,7 @@
     ./starship.nix
     ./tmux
     ./top.nix
+    ./wezterm
     ./yazi.nix
   ];
 
