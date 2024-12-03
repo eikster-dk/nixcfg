@@ -27,7 +27,6 @@ in
     flavor = "mocha";
   };
 
-
   imports = [
     ../../home/features/cli
     ../../home/features/hyprland
@@ -35,6 +34,7 @@ in
 
   features = {
     cli = {
+      atuin.enable = true;
       dysk.enable = true;
       fish.enable = true;
       fastfetch.enable = true;

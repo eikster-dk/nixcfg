@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./aws.nix
+    ./atuin.nix
     ./bat.nix
     ./direnv.nix
     ./dysk.nix
