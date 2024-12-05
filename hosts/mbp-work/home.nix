@@ -12,6 +12,7 @@ in
 {
   imports = [
     ../../home/features/cli
+    ../../home/features/macos
   ];
 
   home.stateVersion = "24.05";
@@ -25,6 +26,9 @@ in
   };
 
   features = {
+    macos = {
+      aerospace.enable = true;
+    };
     cli = {
       dysk.enable = true;
       fish.enable = true;
