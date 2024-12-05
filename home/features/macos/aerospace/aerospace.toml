@@ -112,3 +112,7 @@ run = 'move-node-to-workspace B'
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
 run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.com.zen.browser'
+run = 'move-node-to-workspace A'
