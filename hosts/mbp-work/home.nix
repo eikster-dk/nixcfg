@@ -37,6 +37,7 @@ in
       nvim.enable = true;
       tmux.enable = true;
       wezterm.enable = true;
+      zellij.enable = true;
     };
   };
 }

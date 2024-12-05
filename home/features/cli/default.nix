@@ -23,7 +23,7 @@
     ./top.nix
     ./wezterm
     ./yazi.nix
-    ./zellij.nix
+    ./zellij
   ];
 
   programs.zoxide = {
@@ -40,7 +40,6 @@
     fd
     go-task
     jq
-    ngrok
     nodejs_20
     ripgrep
     rsync
