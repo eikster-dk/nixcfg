@@ -30,7 +30,7 @@ in
       aerospace.enable = true;
     };
     cli = {
-      dysk.enable = true;
+      atuin.enable = true;
       fish.enable = true;
       fastfetch.enable = true;
       kitty.enable = true;
