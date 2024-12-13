@@ -12,6 +12,7 @@
     ./gh.nix
     ./git.nix
     ./go.nix
+    ./granted.nix
     ./kitty.nix
     ./lazygit.nix
     ./lsd.nix

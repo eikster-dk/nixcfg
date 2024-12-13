@@ -19,6 +19,11 @@ in
   home.username = "eikftg";
   home.homeDirectory = "/Users/eikftg";
 
+  home.packages = with pkgs; [
+    (pkgs.callPackage ../../packages/scripts/default.nix { })
+    pnpm
+  ];
+
   # theme
   catppuccin = {
     enable = true;
@@ -33,11 +38,12 @@ in
       atuin.enable = true;
       fish.enable = true;
       fastfetch.enable = true;
+      granted.enable = true;
       kitty.enable = true;
       nvim.enable = true;
       tmux.enable = true;
       wezterm.enable = true;
-      zellij.enable = true;
+      zellij.enable = false;
     };
   };
 }
