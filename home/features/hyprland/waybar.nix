@@ -152,7 +152,7 @@ in
           passthrough = false;
           gtk-layer-shell = true;
           height = 0;
-          modules-left = [ "clock" "hyprland/workspaces" ];
+          modules-left = [ "hyprland/workspaces" ];
           modules-center = [ "hyprland/window" ];
           modules-right = [
             "pulseaudio"
@@ -160,34 +160,13 @@ in
             "bluetooth"
             "backlight"
             "group/hardware"
+            "clock"
           ];
-
-          "hyprland/window" = {
-            format = "👉 {}";
-            seperate-outputs = true;
-          };
           "hyprland/workspaces" = {
             disable-scroll = true;
             all-outputs = true;
             on-click = "activate";
-            format = " {name} {icon} ";
-            on-scroll-up = "hyprctl dispatch workspace e+1";
-            on-scroll-down = "hyprctl dispatch workspace e-1";
-            format-icons = {
-              "1" = "";
-              "2" = "";
-              "3" = "";
-              "4" = "";
-              "5" = "";
-              "6" = "";
-              "7" = "";
-            };
-            persistent_workspaces = {
-              "1" = [ ];
-              "2" = [ ];
-              "3" = [ ];
-              "4" = [ ];
-            };
+            format = " {name} ";
           };
           "group/hardware" = {
             "orientation" = "inherit";
