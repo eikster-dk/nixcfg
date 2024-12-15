@@ -53,7 +53,8 @@ in
       hypridle.enable = true;
       hyprpaper.enable = true;
       waybar.enable = true;
-      wofi.enable = true;
+      wofi.enable = false;
+      rofi.enable = true;
       fonts.enable = true;
     };
   };
