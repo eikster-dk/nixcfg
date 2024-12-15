@@ -20,6 +20,10 @@ in
   home.username = "eikster";
   home.homeDirectory = "/home/eikster";
   home.stateVersion = "24.05";
+  home.sessionVariables = {
+      EDITOR = "nvim";
+      PROJECTS = "$HOME/code";
+  };
 
   # theme
   catppuccin = {
@@ -35,14 +39,12 @@ in
   features = {
     cli = {
       atuin.enable = true;
-      devenv.enable = true;
       dysk.enable = true;
       fish.enable = true;
       fastfetch.enable = true;
       kitty.enable = true;
       nvim.enable = true;
       tmux.enable = true;
-      zellij.enable = true;
     };
     hyprland = {
       enable = true;

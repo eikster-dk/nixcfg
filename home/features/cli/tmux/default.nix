@@ -12,5 +12,9 @@ in
         catppuccin
       ];
     };
+
+    home.packages = [
+      (pkgs.callPackage ./sessionizer/default.nix { })
+    ];
   };
 }
