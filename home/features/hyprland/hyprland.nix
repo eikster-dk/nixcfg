@@ -13,6 +13,8 @@ in
       enable = true;
       extraConfig = ''
         monitor=,preferred,auto,1.6
+        bindl=,switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
+        bindl=,switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, preferred,auto,1.6"
       '';
 
       settings = {
@@ -22,6 +24,8 @@ in
 
         exec-once = [
           "waybar"
+          "[workspace 4 silent] spotify"
+          "[workspace 6 silent] 1password"
         ];
 
         input = {
@@ -101,7 +105,7 @@ in
 
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
-        "$menu" = "wofi --show drun";
+        "$menu" = "rofi -show drun";
         "$fileManager" = "dolphin";
 
         bind = [
@@ -160,3 +164,4 @@ in
     };
   };
 }
+
