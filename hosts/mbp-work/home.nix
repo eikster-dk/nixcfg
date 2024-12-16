@@ -18,6 +18,10 @@ in
   home.stateVersion = "24.05";
   home.username = "eikftg";
   home.homeDirectory = "/Users/eikftg";
+  home.sessionVariables = {
+      EDITOR = "nvim";
+      PROJECTS = "$HOME/code";
+  };
 
   home.packages = with pkgs; [
     (pkgs.callPackage ../../packages/scripts/default.nix { })
