@@ -2,15 +2,21 @@
   services = { nix-daemon = { enable = true; }; };
   nix.package = pkgs.nix;
   nix.settings.trusted-users = [ "root" "eikster" ];
+  system.stateVersion = 5;
+  ids.uids.nixbld = 300;
 
   homebrew = {
     enable = true;
     onActivation = {
-      upgrade = true;
+      autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     taps = [
       "nikitabobko/tap"
+    ];
+    brews = [
+      "pulumi/tap/pulumi"
     ];
     casks = [
       "1password"

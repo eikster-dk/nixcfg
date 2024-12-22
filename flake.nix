@@ -1,86 +1,117 @@
 {
   description = "eikster-dk's dotfiles written in nix";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    # flake.parts
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    # home-manager
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Nix-darwin
+    nix-darwin.url = "github:lnl7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Disko
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Agenix
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Theming
     catppuccin.url = "github:catppuccin/nix";
-
-    darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { nixpkgs, home-manager, darwin, catppuccin, determinate, ... }@inputs: {
-    darwinConfigurations."eikster-mbp" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        ./hosts/mbp-private/darwin.nix
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , nix-darwin
+    , catppuccin
+    , determinate
+    , flake-parts
+    , ...
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-linux"
       ];
-    };
-    darwinConfigurations."eikster-ftg" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        determinate.darwinModules.default
-        ./hosts/mbp-work/darwin.nix
-      ];
-    };
-    homeConfigurations = {
-      "eikster@eikster-mbp" = home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          catppuccin.homeManagerModules.catppuccin
-          ./hosts/mbp-private/home.nix
-        ];
-      };
-      "eikftg@eikster-ftg" = home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          catppuccin.homeManagerModules.catppuccin
-          ./hosts/mbp-work/home.nix
-        ];
-      };
-    };
-    nixosConfigurations = {
-      nixbook = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+      flake = {
+        # If I one day require overlays, then it's here:
+        # overlays = import ./modules/overlays { inherit inputs; };
+
+        # my nixos modules
+        # nixosModules = {
+        #   eikster = import ./modules/hosts/nixos.nix;
+        # };
+
+        # my darwin modules
+        # darwinModules = {
+        #   eikster = import ./modules/hosts/darwin.nix;
+        # };
+
+        # my home-manager modules
+        homeMangerModules = {
+          eikster = import ./modules/home-manager;
         };
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/nixbook/config.nix
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {
+
+        # nixos
+        nixosConfigurations = {
+          nixbook = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {
               inherit inputs;
             };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users."eikster" = {
-              imports = [
-                ./hosts/nixbook/home.nix
-                catppuccin.homeManagerModules.catppuccin
-              ];
+            modules = [ ./hosts/nixbook ];
+          };
+        };
+
+        # darwin
+        darwinConfigurations = {
+          private = nix-darwin.lib.darwinSystem {
+            specialArgs = {
+              inherit inputs;
             };
-          }
-        ];
+            system = "aarch64-darwin";
+            modules = [ ./hosts/mbp-private ];
+          };
+          work = nix-darwin.lib.darwinSystem {
+            specialArgs = {
+              inherit inputs;
+            };
+            system = "aarch64-darwin";
+            modules = [ ./hosts/mbp-work ];
+          };
+        };
+
+        # home-manager
+        homeConfigurations = {
+          "eikster@eikster-mbp" = home-manager.lib.homeManagerConfiguration {
+            pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+            extraSpecialArgs = { inherit inputs; };
+            modules = [
+              catppuccin.homeManagerModules.catppuccin
+              ./users/eikster/home
+            ];
+          };
+          # "eikftg@hostname" = home-manager.lib.homeManagerConfiguration {
+          #   pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+          #   extraSpecialArgs = { inherit inputs; };
+          #   modules = [
+          #     catppuccin.homeManagerModules.catppuccin
+          #     ./users/eikftg/home.nix
+          #   ];
+          # };
+        };
       };
     };
-  };
 }
