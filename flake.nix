@@ -50,14 +50,14 @@
         # overlays = import ./modules/overlays { inherit inputs; };
 
         # my nixos modules
-        # nixosModules = {
-        #   eikster = import ./modules/hosts/nixos.nix;
-        # };
+        nixosModules = {
+          eikster = import ./modules/hosts/nixos.nix;
+        };
 
         # my darwin modules
-        # darwinModules = {
-        #   eikster = import ./modules/hosts/darwin.nix;
-        # };
+        darwinModules = {
+          eikster = import ./modules/hosts/darwin.nix;
+        };
 
         # my home-manager modules
         homeMangerModules = {
@@ -77,12 +77,12 @@
 
         # darwin
         darwinConfigurations = {
-          private = nix-darwin.lib.darwinSystem {
+          "eikster-mbp" = nix-darwin.lib.darwinSystem {
             specialArgs = {
               inherit inputs;
             };
             system = "aarch64-darwin";
-            modules = [ ./hosts/mbp-private ];
+            modules = [ ./hosts/mbp-private/darwin.nix ];
           };
           work = nix-darwin.lib.darwinSystem {
             specialArgs = {
