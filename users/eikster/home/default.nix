@@ -21,14 +21,12 @@
   home.packages =
     with pkgs; [
       ### nixos + darwin packages
-      (pkgs.callPackage ../../../packages/scripts/default.nix { })
       air
       comma
       dogdns
       fd
       go-task
-      karabiner-elements
-      #ngrok
+      ngrok
       nodejs_20
       ripgrep
       rsync
@@ -38,7 +36,12 @@
       ulid
       zk
     ]
-
+    ### darwin specific packages
+    ++ (lib.optionals (pkgs.system == "aarch64-darwin") [
+      ## todo, improve this
+      (pkgs.callPackage ../../../packages/scripts/default.nix { })
+      karabiner-elements
+    ])
     ### nixos specific packages
     ++ (lib.optionals (pkgs.system != "aarch64-darwin") [
     ]);
