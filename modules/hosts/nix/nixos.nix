@@ -10,7 +10,7 @@ let
   cfg = config.features.nixSettings;
 in
 {
-  imports = [ inputs.lix.nixosModules.default ];
+  imports = [ ];
   config = lib.mkIf cfg.enable {
     nix = {
       gc = {

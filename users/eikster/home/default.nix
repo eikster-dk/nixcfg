@@ -26,7 +26,7 @@
       dogdns
       fd
       go-task
-      ngrok
+      #ngrok
       nodejs_20
       ripgrep
       rsync
@@ -49,6 +49,9 @@
   features = {
     suites = {
       all.enable = true;
+    };
+    macos = {
+      aerospace.enable = true;
     };
   };
 }

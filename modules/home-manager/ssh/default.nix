@@ -17,6 +17,9 @@ in
       extraConfig = ''
         Host *
           IdentityAgent "${onePassPath}"
+        Host mibzy
+          IdentityFile ~/.ssh/hetzner.pub
+          IdentitiesOnly yes
       '';
     };
   };

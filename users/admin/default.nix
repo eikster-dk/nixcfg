@@ -11,7 +11,7 @@ in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  yomaq.ssh.enable = true;
+  features.ssh.enable = true;
   users.mutableUsers = false;
   users.users.admin = {
     isNormalUser = true;
@@ -20,7 +20,6 @@ in
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHo5dY2ZByhzqZpTzARo67k5Fxzf97h+ixR/lBv2wZv/"
     ];
-    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"

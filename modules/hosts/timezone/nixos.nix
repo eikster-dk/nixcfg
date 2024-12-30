@@ -8,7 +8,7 @@ let
   cfg = config.features.localization;
 in
 {
-  options.features.timezone = {
+  options.features.localization = {
     UTC = lib.mkOption {
       type = lib.types.bool;
       default = false;

@@ -4,17 +4,14 @@ let
     eikster
   ];
 
-  web1 = "";
-  web2 = "";
-  dedi1 = "";
+  mibzy = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZ2UYhiZFvD1/Pnk59wFJUTyDQg/gYy0skWOBRCr3Bm";
   servers = [
-    web1
-    web2
-    dedi1
+    mibzy
   ];
 
   all = users ++ servers;
 in
 {
   "eikster.age".publicKeys = [ eikster ];
+  "mibzy_tailscale.age".publicKeys = [ eikster mibzy ];
 }

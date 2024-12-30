@@ -78,6 +78,13 @@ if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run = [
+ 'layout tiling',
+ 'move-node-to-workspace W',
+]
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
 

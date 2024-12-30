@@ -32,6 +32,8 @@ in
         fastfetch.enable = true;
         fish.enable = true;
         fzf.enable = true;
+        git.enable = true;
+        ghostty.enable = true;
         lazygit.enable = true;
         lsd.enable = true;
         nvim.enable = true;

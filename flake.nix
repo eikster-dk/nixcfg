@@ -9,10 +9,11 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # home-manager
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     # Nix-darwin
     nix-darwin.url = "github:lnl7/nix-darwin";
@@ -25,6 +26,9 @@
     # Agenix
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # tailscale
+    tailscale.url = "https://flakehub.com/f/tailscale/tailscale/1.76.6.tar.gz";
 
     # Theming
     catppuccin.url = "github:catppuccin/nix";
@@ -66,6 +70,13 @@
 
         # nixos
         nixosConfigurations = {
+          mibzy = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {
+              inherit inputs;
+            };
+            modules = [ ./hosts/mibzy ];
+          };
           nixbook = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = {
