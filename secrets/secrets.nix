@@ -14,4 +14,5 @@ in
 {
   "eikster.age".publicKeys = [ eikster ];
   "mibzy_tailscale.age".publicKeys = [ eikster mibzy ];
+  "mibzy_meilisearch_key.age".publicKeys = [ eikster mibzy ];
 }

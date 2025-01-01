@@ -56,6 +56,7 @@
         # my nixos modules
         nixosModules = {
           eikster = import ./modules/hosts/nixos.nix;
+          server = import ./modules/server/nixos.nix;
         };
 
         # my darwin modules
