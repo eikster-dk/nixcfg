@@ -10,6 +10,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
 
     inputs.self.nixosModules.eikster
+    inputs.self.nixosModules.server
     (inputs.self + /users/admin)
     ./disks.nix
   ];
@@ -50,6 +51,7 @@
     };
 
     age.secrets.tailscale_auth_key.file = ../../secrets/mibzy_tailscale.age;
+    age.secrets.meilisearch_key.file = ../../secrets/mibzy_meilisearch_key.age;
 
     features = {
       nixSettings.enable = true;
@@ -61,6 +63,26 @@
         auth_key_path = config.age.secrets.tailscale_auth_key.path;
       };
       localization.UTC = true;
+      server = {
+        meilisearch = {
+          enable = true;
+          masterKey = config.age.secrets.meilisearch_key.path;
+        };
+        postgres = {
+          enable = true;
+          package = pkgs.postgresql_17;
+          databases = [ "hoejtiderne" ];
+          authMappings = [
+            {
+              type = "local";
+              database = "hoejtiderne";
+              user = "hoejtiderne";
+              authMethod = "peer";
+              options = null;
+            }
+          ];
+        };
+      };
     };
   };
 }
