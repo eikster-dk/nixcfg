@@ -101,7 +101,10 @@
               inherit inputs;
             };
             system = "aarch64-darwin";
-            modules = [ ./hosts/mbp-work/darwin.nix ];
+            modules = [
+              determinate.darwinModules.default
+              ./hosts/mbp-work/darwin.nix
+            ];
           };
         };
 
