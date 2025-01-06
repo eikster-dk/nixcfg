@@ -30,6 +30,7 @@
       tailwindcss
       tree
       ulid
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ]
     ### darwin specific packages
     ++ (lib.optionals (pkgs.system == "aarch64-darwin") [
