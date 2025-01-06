@@ -96,12 +96,12 @@
             system = "aarch64-darwin";
             modules = [ ./hosts/mbp-private/darwin.nix ];
           };
-          work = nix-darwin.lib.darwinSystem {
+          "eikster-ftg" = nix-darwin.lib.darwinSystem {
             specialArgs = {
               inherit inputs;
             };
             system = "aarch64-darwin";
-            modules = [ ./hosts/mbp-work ];
+            modules = [ ./hosts/mbp-work/darwin.nix ];
           };
         };
 
@@ -115,14 +115,14 @@
               ./users/eikster/home
             ];
           };
-          # "eikftg@hostname" = home-manager.lib.homeManagerConfiguration {
-          #   pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
-          #   extraSpecialArgs = { inherit inputs; };
-          #   modules = [
-          #     catppuccin.homeManagerModules.catppuccin
-          #     ./users/eikftg/home.nix
-          #   ];
-          # };
+          "eikftg@eikster-ftg" = home-manager.lib.homeManagerConfiguration {
+            pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+            extraSpecialArgs = { inherit inputs; };
+            modules = [
+              catppuccin.homeManagerModules.catppuccin
+              ./users/eikftg/home
+            ];
+          };
         };
       };
     };
