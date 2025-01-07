@@ -39,7 +39,10 @@ in
         nvim.enable = true;
         ssh.enable = true;
         starship.enable = true;
-        tmux.enable = true;
+        tmux = {
+          enable = true;
+          sessionizer = true;
+        };
         top.enable = true;
         wezterm.enable = true;
         yazi.enable = true;
