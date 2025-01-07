@@ -43,6 +43,7 @@ in
         top.enable = true;
         wezterm.enable = true;
         yazi.enable = true;
+        zoxide.enable = true;
       };
       languages = {
         golang.enable = true;
