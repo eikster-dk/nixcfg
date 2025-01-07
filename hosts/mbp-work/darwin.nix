@@ -20,6 +20,7 @@ in
     _1password.enable = true;
     agenix.enable = true;
     ghostty.enable = true;
+    karabiner.enable = true;
   };
 
 
