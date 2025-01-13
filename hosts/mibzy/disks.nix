@@ -167,6 +167,24 @@ in
             };
             type = "zfs_fs";
           };
+          pg = {
+            type = "zfs_fs";
+            options = {
+              mountpoint = "none";
+              recordsize = "16k";
+              atime = "off";
+              xattr = "sa";
+              logbias = "latency";
+            };
+          };
+          "pg/data" = {
+            type = "zfs_fs";
+            mountpoint = "/var/lib/postgres";
+          };
+          "pg/wal-17" = {
+            type = "zfs_fs";
+            mountpoint = "/var/lib/postgres/17/pg_wal";
+          };
           etcssh = {
             type = "zfs_fs";
             options.mountpoint = "legacy";
