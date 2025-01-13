@@ -81,11 +81,17 @@ in
       enable = true;
       package = cfg.package;
       ensureDatabases = cfg.databases;
+
+      settings = {
+        full_page_writes = "off"; # zfs features
+      };
+
       authentication = pkgs.lib.mkOverride 10 ''
         #type  database       DBuser            auth-method     optional_ident_map
         local  all            postgres          peer            map=superuser_map
         ${renderAuthMapping cfg.authMappings}
       '';
+
       identMap = ''
         # ArbitraryMapName systemUser DBUser
         superuser_map      admin      postgres
