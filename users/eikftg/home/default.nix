@@ -16,6 +16,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     PROJECTS = "$HOME/code";
+    SECOND_BRAIN = "/Users/eikftg/Library/Mobile Documents/iCloud~md~obsidian/Documents/second brain";
   };
 
   home.packages =
@@ -45,6 +46,9 @@
   features = {
     suites = {
       all.enable = true;
+    };
+    cli.granted = {
+      enable = true;
     };
     macos = {
       aerospace.enable = true;
