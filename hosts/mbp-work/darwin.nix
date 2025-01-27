@@ -1,19 +1,46 @@
-{ pkgs, ... }: {
+{ inputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
+  hostname = "eikster-ftg";
+in
+{
+  imports = [
+    inputs.self.darwinModules.eikster
+  ];
+
+  networking = {
+    computerName = hostname;
+    localHostName = hostname;
+  };
+  features = {
+    _1password.enable = true;
+    agenix.enable = true;
+    ghostty.enable = true;
+    karabiner.enable = true;
+  };
+
+
   services = { nix-daemon = { enable = true; }; };
   nix.settings.trusted-users = [ "root" "eikftg" ];
-
+  system.stateVersion = 5;
   homebrew = {
     enable = true;
     onActivation = {
-      upgrade = true;
+      autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     taps = [
       "nikitabobko/tap"
     ];
+    brews = [
+      "pulumi/tap/pulumi"
+    ];
     casks = [
-      "1password"
-      "1password-cli"
       "arc"
       "bruno"
       "discord"
@@ -24,8 +51,6 @@
       "slack"
       "spotify"
       "tableplus"
-      "wezterm"
-      "zen-browser"
       {
         name = "aerospace";
         greedy = true;
@@ -33,8 +58,11 @@
     ];
   };
 
+  programs.fish.shellInit = ''
+    fish_add_path -a /opt/homebrew/bin/
+  '';
+
   system = {
-    stateVersion = 5;
     defaults = {
       dock = {
         autohide = true;

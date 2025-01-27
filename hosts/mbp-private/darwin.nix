@@ -1,20 +1,47 @@
-{ pkgs, ... }: {
+{ inputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
+  hostname = "eikster-mbp";
+in
+{
+  imports = [
+    inputs.self.darwinModules.eikster
+  ];
+
+  networking = {
+    computerName = hostname;
+    localHostName = hostname;
+  };
+  features = {
+    _1password.enable = true;
+    agenix.enable = true;
+    ghostty.enable = true;
+  };
+
+
   services = { nix-daemon = { enable = true; }; };
   nix.package = pkgs.nix;
   nix.settings.trusted-users = [ "root" "eikster" ];
-
+  system.stateVersion = 5;
+  ids.uids.nixbld = 300;
   homebrew = {
     enable = true;
     onActivation = {
-      upgrade = true;
+      autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     taps = [
       "nikitabobko/tap"
     ];
+    brews = [
+      "pulumi/tap/pulumi"
+    ];
     casks = [
-      "1password"
-      "1password-cli"
       "arc"
       "balenaetcher"
       "bruno"
@@ -40,6 +67,10 @@
       }
     ];
   };
+
+  programs.fish.shellInit = ''
+    fish_add_path -a /opt/homebrew/bin/
+  '';
 
   system = {
     defaults = {

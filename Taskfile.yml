@@ -22,3 +22,11 @@ tasks:
   clean:
     cmds:
       - nix-collect-garbage -d
+
+  apply_mibzy:
+    cmds:
+      - nix run nixpkgs#nixos-rebuild -- switch --fast --flake .#mibzy --target-host admin@mibzy --build-host admin@mibzy --use-remote-sudo
+
+  anywhere-mibzy:
+    cmds:
+      - nix run github:nix-community/nixos-anywhere -- --flake .#mibzy --target-host root@{{TODO}} --build-on-remote --extra-files ./.secrets/mibzy/ --disk-encryption-keys /tmp/secret.key <(cat ./.secrets/mibzy_encryption)
