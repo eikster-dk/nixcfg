@@ -26,6 +26,7 @@
       dogdns
       fd
       nodejs_20
+      pnpm
       go-task
       ripgrep
       tailwindcss
