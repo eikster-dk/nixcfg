@@ -16,7 +16,7 @@
     ghostty.url = "github:ghostty-org/ghostty";
 
     # Nix-darwin
-    nix-darwin.url = "github:lnl7/nix-darwin";
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Disko
@@ -94,7 +94,10 @@
               inherit inputs;
             };
             system = "aarch64-darwin";
-            modules = [ ./hosts/mbp-private/darwin.nix ];
+            modules = [
+              determinate.darwinModules.default
+              ./hosts/mbp-private/darwin.nix
+            ];
           };
           "eikster-ftg" = nix-darwin.lib.darwinSystem {
             specialArgs = {

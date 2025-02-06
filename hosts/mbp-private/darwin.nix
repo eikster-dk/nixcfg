@@ -24,7 +24,6 @@ in
 
 
   services = { nix-daemon = { enable = true; }; };
-  nix.package = pkgs.nix;
   nix.settings.trusted-users = [ "root" "eikster" ];
   system.stateVersion = 5;
   ids.uids.nixbld = 300;
