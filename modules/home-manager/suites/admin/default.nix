@@ -33,6 +33,7 @@ in
         tmux.enable = true;
         top.enable = true;
         yazi.enable = true;
+        xh.enable = true;
       };
     };
   };
