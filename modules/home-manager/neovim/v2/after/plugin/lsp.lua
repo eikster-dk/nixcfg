@@ -144,17 +144,19 @@ lspconfig.html.setup({
 lspconfig.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "templ", "javascript", "typescript", "html" },
+  filetypes = { "templ", "javascript", "typescript", "html", "go" },
   init_options = { userLanguages = { templ = "html" } },
   settings = {
     tailwindCSS = {
       experimental = {
         classRegex = {
-          { "Class\\s*:\\s*['\"]([^'\"]*)['\"]", "class\\s*:\\s*['\"]([^'\"]*)['\"]" },
+          { "Class(?:es)?[({]([^)}]*)[)}]", '["`]([^"`]*)["`]' },
+          -- { "Class\\s*:\\s*['\"]([^'\"]*)['\"]", "class\\s*:\\s*['\"]([^'\"]*)['\"]" },
         },
       },
       includeLanguages = {
         templ = "html",
+        go = "html",
       },
     },
   },
