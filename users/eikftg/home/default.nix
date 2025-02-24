@@ -48,8 +48,9 @@
     suites = {
       all.enable = true;
     };
-    cli.granted = {
-      enable = true;
+    cli = {
+      aws.enable = true;
+      granted.enable = true;
     };
     macos = {
       aerospace.enable = true;
