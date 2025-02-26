@@ -24,8 +24,9 @@ in
   };
 
 
-  services = { nix-daemon = { enable = true; }; };
+  services = { nix-daemon = { enable = false; }; };
   nix.settings.trusted-users = [ "root" "eikftg" ];
+  nix.enable = false;
   system.stateVersion = 5;
   homebrew = {
     enable = true;

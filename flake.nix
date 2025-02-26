@@ -105,7 +105,6 @@
             };
             system = "aarch64-darwin";
             modules = [
-              determinate.darwinModules.default
               ./hosts/mbp-work/darwin.nix
             ];
           };
