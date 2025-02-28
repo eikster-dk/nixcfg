@@ -32,8 +32,6 @@
       networkmanager.enable = true;
     };
 
-    services.fwupd.enable = true;
-
     features = {
       _1password.enable = true;
       nixSettings.enable = true;
