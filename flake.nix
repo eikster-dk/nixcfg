@@ -71,19 +71,19 @@
 
         # nixos
         nixosConfigurations = {
+          bytestorm = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {
+              inherit inputs;
+            };
+            modules = [ ./hosts/bytestorm ];
+          };
           mibzy = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = {
               inherit inputs;
             };
             modules = [ ./hosts/mibzy ];
-          };
-          nixbook = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = {
-              inherit inputs;
-            };
-            modules = [ ./hosts/nixbook ];
           };
         };
 
