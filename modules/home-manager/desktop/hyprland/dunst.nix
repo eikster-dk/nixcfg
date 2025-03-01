@@ -4,10 +4,10 @@
 , ...
 }:
 with lib; let
-  cfg = config.features.hyprland.dunst;
+  cfg = config.features.desktop.hyprland.dunst;
 in
 {
-  options.features.hyprland.dunst.enable = mkEnableOption "enable dunst and additional configs";
+  options.features.desktop.hyprland.dunst.enable = mkEnableOption "enable dunst and additional configs";
 
   config = mkIf cfg.enable {
     services.dunst = {

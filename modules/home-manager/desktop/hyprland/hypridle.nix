@@ -4,10 +4,10 @@
 , ...
 }:
 with lib; let
-  cfg = config.features.hyprland.hypridle;
+  cfg = config.features.desktop.hyprland.hypridle;
 in
 {
-  options.features.hyprland.hypridle.enable = mkEnableOption "enable hypridle and additional configs";
+  options.features.desktop.hyprland.hypridle.enable = mkEnableOption "enable hypridle and additional configs";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [

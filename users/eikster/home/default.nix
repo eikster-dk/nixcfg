@@ -21,7 +21,13 @@ let
   # Linux-specific features
   linuxFeatures = lib.optionalAttrs isLinux {
     desktop = {
-      hyprland = true;
+      hyprland = {
+        enable = true;
+        hyprlock.enable = true;
+        hyprpaper.enable = true;
+        rofi.enable = true;
+        waybar.enable = false;
+      };
     };
   };
 
@@ -35,6 +41,7 @@ in
 {
   imports = [
     inputs.self.homeMangerModules.eikster
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
@@ -46,12 +53,19 @@ in
     PROJECTS = "$HOME/code";
   };
 
+  # theme
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   home.packages =
     with pkgs; [
       ### nixos + darwin packages
       air
       comma
       dogdns
+      nerdfonts
       fd
       go-task
       nodejs_20

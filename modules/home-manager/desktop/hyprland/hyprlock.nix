@@ -4,10 +4,10 @@
 , ...
 }:
 with lib; let
-  cfg = config.features.hyprland.hyprlock;
+  cfg = config.features.desktop.hyprland.hyprlock;
 in
 {
-  options.features.hyprland.hyprlock.enable = mkEnableOption "enable hyprlock and additional configs";
+  options.features.desktop.hyprland.hyprlock.enable = mkEnableOption "enable hyprlock and additional configs";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
