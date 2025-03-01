@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     inputs.self.nixosModules.eikster
     (inputs.self + /users/eikster)
@@ -32,10 +33,19 @@
       networkmanager.enable = true;
     };
 
+    console.keyMap = "dk-latin1";
+
     features = {
       _1password.enable = true;
+      ghostty.enable = true;
       nixSettings.enable = true;
       agenix.enable = true;
+      profiles = {
+        base.enable = true;
+      };
+      services = {
+        greetd.enable = true;
+      };
       primaryUsers.users = [ "eikster" ];
     };
   };

@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ./greetd/nixos.nix
+    ./base/default.nix
   ];
 }

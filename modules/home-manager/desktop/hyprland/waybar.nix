@@ -4,10 +4,10 @@
 , ...
 }:
 with lib; let
-  cfg = config.features.hyprland.waybar;
+  cfg = config.features.desktop.hyprland.waybar;
 in
 {
-  options.features.hyprland.waybar.enable = mkEnableOption "enable waybar and additional configs";
+  options.features.desktop.hyprland.waybar.enable = mkEnableOption "enable waybar and additional configs";
 
   config = mkIf cfg.enable {
     programs.waybar = {

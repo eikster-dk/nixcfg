@@ -16,12 +16,12 @@ in
       description = ''
         Enable greetd as login manager with tuigreet
       '';
+    };
 
-      session = lib.mkOption {
-        description = "Default command to execute on login.";
-        default = lib.getExe config.desktop.hyprland.package;
-        type = lib.types.str;
-      };
+    session = lib.mkOption {
+      description = "Default command to execute on login.";
+      default = "Hyprland";
+      type = lib.types.str;
     };
   };
   config = lib.mkIf cfg.enable {
@@ -31,7 +31,7 @@ in
         vt = 3;
         settings = {
           default_session = {
-            command = lib.mkDefault "${lib.getExe pkgs.greetd.tuigreet} --asterisks --user-menu -g 'Welcome to NixOS ${config.system.nixos.release}' --time --remember --cmd ${config.myNixOS.services.greetd.session}";
+            command = lib.mkDefault "${lib.getExe pkgs.greetd.tuigreet} --asterisks --user-menu -g 'Welcome to NixOS ${config.system.nixos.release}' --time --remember --cmd ${cfg.session}";
           };
         };
       };

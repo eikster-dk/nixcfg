@@ -4,10 +4,10 @@
 , ...
 }:
 with lib; let
-  cfg = config.features.hyprland.hyprpaper;
+  cfg = config.features.desktop.hyprland.hyprpaper;
 in
 {
-  options.features.hyprland.hyprpaper.enable = mkEnableOption "enable hyprpaper and additional configs";
+  options.features.desktop.hyprland.hyprpaper.enable = mkEnableOption "enable hyprpaper and additional configs";
 
   config = mkIf cfg.enable {
     home.file = {
