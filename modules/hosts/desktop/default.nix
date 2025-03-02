@@ -8,6 +8,9 @@ let
   cfg = config.features.desktop;
 in
 {
+  imports = [
+  ];
+
   options.features.desktop = {
     enable = lib.mkOption {
       type = lib.types.bool;
@@ -19,6 +22,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     security.polkit.enable = true;
     security.rtkit.enable = true;
 
