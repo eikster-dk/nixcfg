@@ -11,6 +11,7 @@
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     inputs.self.nixosModules.eikster
     (inputs.self + /users/eikster)
+    ./stylix.nix
   ];
 
   config = {
