@@ -24,6 +24,7 @@ let
       hyprland = {
         enable = true;
         hyprlock.enable = true;
+        hypridle.enable = true;
         hyprpaper.enable = true;
         rofi.enable = true;
         waybar.enable = false;
