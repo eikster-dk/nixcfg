@@ -31,6 +31,7 @@
     tailscale.url = "https://flakehub.com/f/tailscale/tailscale/1.76.6.tar.gz";
 
     # Theming
+    stylix.url = "github:danth/stylix/release-24.11";
     catppuccin.url = "github:catppuccin/nix";
   };
   outputs =

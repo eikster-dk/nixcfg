@@ -52,18 +52,12 @@ in
         PartOf = "graphical-session.target";
       };
       Service = {
-        ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+        # ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         Restart = "no";
       };
       Install.WantedBy = [ "hyprland-session.target" ];
 
     };
-
-    #   dconf.settings = {
-    #     "org/gnome/desktop/vm/preferences".button-layout = "";
-    #     # "org/gnome/desktop/interface" = {
-    #     #   color-scheme = "prefer-dark";
-    #     # };
-    #   };
   };
 }

@@ -23,16 +23,6 @@ in
           enable_fingerprint = true;
         };
 
-        background = [
-          {
-            monitor = "";
-            path = "/home/eikster/Pictures/current.jpg";
-
-            blur_passes = 1; # 0 disables blurring
-            blur_size = 7;
-          }
-        ];
-
         label = [
           {
             monitor = "";
@@ -75,12 +65,8 @@ in
           dots_size = 0.2;
           dots_spacing = 0.2;
           dots_center = true;
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(0, 0, 0, 0.2)";
-          font_color = "rgb(111, 45, 104)";
           fade_on_empty = false;
           rounding = -1;
-          check_color = "rgb(30, 107, 204)";
           placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
           hide_input = false;
           position = "0, -35";

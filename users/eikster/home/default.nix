@@ -41,7 +41,6 @@ in
 {
   imports = [
     inputs.self.homeMangerModules.eikster
-    inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
@@ -51,12 +50,6 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     PROJECTS = "$HOME/code";
-  };
-
-  # theme
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
   };
 
   home.packages =
