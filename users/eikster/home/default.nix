@@ -27,7 +27,7 @@ let
         hypridle.enable = true;
         hyprpaper.enable = true;
         rofi.enable = true;
-        waybar.enable = false;
+        waybar.enable = true;
       };
     };
   };
