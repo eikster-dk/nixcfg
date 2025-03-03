@@ -41,6 +41,9 @@
       ghostty.enable = true;
       nixSettings.enable = true;
       agenix.enable = true;
+      localization = {
+        danish = true;
+      };
       profiles = {
         base.enable = true;
       };
