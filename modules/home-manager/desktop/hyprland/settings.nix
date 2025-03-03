@@ -26,7 +26,6 @@ in
   };
 
   exec-once = [
-    "waybar"
   ];
 
   input = {
