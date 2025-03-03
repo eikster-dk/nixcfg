@@ -40,13 +40,14 @@ in
     ];
     brews = [
       "pulumi/tap/pulumi"
+      "podman-compose"
     ];
     casks = [
       "arc"
       "bruno"
       "discord"
-      "docker"
       "obsidian"
+      "podman-desktop"
       "polypane"
       "raycast"
       "slack"
