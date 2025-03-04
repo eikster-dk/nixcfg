@@ -102,12 +102,13 @@ in
 
   "$mainMod" = "SUPER";
   "$terminal" = "ghostty";
-  "$menu" = "rofi -show drun";
+  "$menu" = ''rofi -show drun'';
+  "$power" = ''rofi -show power-menu -modi "power-menu:${lib.getExe pkgs.rofi-power-menu} --choices=logout/lockscreen/suspend/shutdown/reboot"'';
   "$fileManager" = "dolphin";
 
   bind =
     [
-      "$mainMod, q, exit"
+      "$mainMod, q, exec, $power"
       "$mainMod, return, exec, $terminal"
       "$mainMod, space, exec, $menu"
       "$mainMod, c, killactive"
