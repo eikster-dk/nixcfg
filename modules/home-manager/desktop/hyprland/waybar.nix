@@ -195,7 +195,12 @@ in
             border-radius: 0;
           }
       '';
+    };
 
+    systemd.user.services.waybar = {
+      Install.WantedBy = lib.mkForce (lib.optional (config.wayland.windowManager.hyprland.enable) "hyprland-session.target");
+      Service.Restart = lib.mkForce "no";
+      Unit.BindsTo = lib.optional (config.wayland.windowManager.hyprland.enable) "hyprland-session.target";
     };
   };
 }
