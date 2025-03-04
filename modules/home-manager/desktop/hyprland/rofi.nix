@@ -42,10 +42,14 @@ in
     };
     programs.rofi = {
       enable = true;
+
       location = "center";
+
       plugins = [
         pkgs.rofi-power-menu
       ];
+
+      terminal = "ghostty";
 
       extraConfig = {
         case-sensitive = false;
