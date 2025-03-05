@@ -41,6 +41,10 @@
       ghostty.enable = true;
       nixSettings.enable = true;
       agenix.enable = true;
+      desktop = {
+        enable = true;
+        hyprland.enable = true;
+      };
       localization = {
         danish = true;
       };
