@@ -4,7 +4,8 @@
 , ...
 }:
 let
-  cfg = config.features;
+  cfg = config.features.desktop.hyprland;
+  scripts = import ./clamshell.nix { inherit config lib pkgs; };
 
   windowManagerBinds = {
     Down = "down";
@@ -19,7 +20,9 @@ let
 in
 {
   monitor =
-    [ ",preferred,auto,1.6" ];
+    [ ",preferred,auto,1.6" ]
+    ++ [cfg.laptopMonitor]
+    ++ cfg.monitors;
 
   xwayland = {
     force_zero_scaling = true;
@@ -127,7 +130,12 @@ in
     "$mainMod,mouse:273,resizewindow"
   ];
 
+
   bindl = [
+  ] ++ lib.lists.optionals (cfg.laptopMonitor != null) [
+    ",switch:on:Lid Switch,exec,${scripts.clamshell} on"
+    ",switch:off:Lid Switch,exec,${scripts.clamshell} off"
+
   ];
 
   bindle = [
