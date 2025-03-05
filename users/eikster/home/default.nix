@@ -27,6 +27,7 @@ let
         hyprlock.enable = true;
         hypridle.enable = true;
         hyprpaper.enable = true;
+        mako.enable = true;
         rofi.enable = true;
         waybar.enable = true;
       };
