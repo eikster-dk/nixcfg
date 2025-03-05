@@ -22,14 +22,19 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    boot = {
+      consoleLogLevel = 0;
+      initrd.verbose = false;
+      plymouth.enable = true;
+    };
 
     security.polkit.enable = true;
     security.rtkit.enable = true;
 
     services = {
-      blueman = {
-        enable = true;
-      };
+      # blueman = {
+      #   enable = true;
+      # };
       pipewire = {
         enable = true;
         alsa.enable = true;
