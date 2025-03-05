@@ -53,6 +53,7 @@ in
   ### nixos specific packages
   ++ (lib.optionals (isLinux) [
       ./firefox
+      ./hyprland
   ]);
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
