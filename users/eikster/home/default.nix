@@ -24,6 +24,11 @@ let
       enable = true;
       hyprland = {
         enable = true;
+        laptopMonitor = "desc:BOE NE135A1M-NY1,preferred,auto,1.6";
+        monitors = [
+          "desc:Apple Computer Inc StudioDisplay 0x4E3FCE22 (DP-5),5120x2880@60,auto,1.6"
+          "desc:Apple Computer Inc StudioDisplay 0x4E3FCE22 (DP-6),disable"
+        ];
         hyprlock.enable = true;
         hypridle.enable = true;
         hyprpaper.enable = true;
