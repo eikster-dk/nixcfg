@@ -21,6 +21,7 @@ let
   # Linux-specific features
   linuxFeatures = lib.optionalAttrs isLinux {
     desktop = {
+      enable = true;
       hyprland = {
         enable = true;
         hyprlock.enable = true;
@@ -52,6 +53,8 @@ in
     EDITOR = "nvim";
     PROJECTS = "$HOME/code";
   };
+
+  programs.nushell.enable = true;
 
   home.packages =
     with pkgs; [
