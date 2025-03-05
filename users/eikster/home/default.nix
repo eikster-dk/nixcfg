@@ -90,6 +90,8 @@ in
     ])
     ### nixos specific packages
     ++ (lib.optionals (isLinux) [
+      obsidian
+      vesktop
     ]);
 
   features = commonFeatures // linuxFeatures // darwinFeatures;
