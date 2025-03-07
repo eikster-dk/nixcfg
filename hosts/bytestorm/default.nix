@@ -54,6 +54,12 @@
       profiles = {
         base.enable = true;
       };
+      programs = {
+        fwupd = {
+          enable = true;
+          autoCheck.enable = true;
+        };
+      };
       services = {
         greetd.enable = true;
       };
