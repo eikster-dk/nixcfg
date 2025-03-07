@@ -41,6 +41,9 @@
       ghostty.enable = true;
       nixSettings.enable = true;
       agenix.enable = true;
+      boot = {
+        secureBoot.enable = true;
+      };
       desktop = {
         enable = true;
         hyprland.enable = true;
