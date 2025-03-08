@@ -62,6 +62,7 @@
       };
       services = {
         greetd.enable = true;
+        tailscale.enable = true;
       };
       primaryUsers.users = [ "eikster" ];
     };
