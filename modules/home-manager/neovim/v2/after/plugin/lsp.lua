@@ -1,4 +1,11 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities({
+  workspace = {
+    didChangeWatchedFiles = {
+      dynamicRegistration = true, -- needs fswatch on linux
+      relativePatternSupport = true,
+    },
+  },
+}, true)
 
 -- In this case, we create a function that lets us more easily define mappings specific
 -- for LSP related items. It sets the mode, buffer and description for us each time.

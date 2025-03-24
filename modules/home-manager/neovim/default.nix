@@ -48,15 +48,7 @@ in
         # Coding
         nvim-lspconfig
         conform-nvim
-        nvim-cmp
-        cmp-buffer
-        cmp-path
-        cmp-cmdline
-        cmp-emoji
-        cmp-calc
-        cmp-nvim-lsp
-        cmp-nvim-lsp-signature-help
-        cmp_luasnip
+        blink-cmp
         nvim-ts-autotag
 
         fidget-nvim
