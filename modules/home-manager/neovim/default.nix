@@ -116,8 +116,8 @@ in
       tailwindcss-language-server
       templ
       tree-sitter
-      typescript-language-server
       vscode-langservers-extracted
+      vtsls
       yaml-language-server
       yamllint
     ];

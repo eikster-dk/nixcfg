@@ -179,30 +179,41 @@ lspconfig.nil_ls.setup({
   on_attach = on_attach,
 })
 
-lspconfig.tsserver.setup({
+lspconfig.vtsls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+  },
   settings = {
-    javascript = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all",
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
+    complete_function_calls = true,
+    vtsls = {
+      enableMoveToFileCodeAction = true,
+      autoUseWorkspaceTsdk = true,
+      experimental = {
+        maxInlayHintLength = 30,
+        completion = {
+          enableServerSideFuzzyMatch = true,
+        },
       },
     },
     typescript = {
+      updateImportsOnFileMove = { enabled = "always" },
+      suggest = {
+        completeFunctionCalls = true,
+      },
       inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all",
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
+        enumMemberValues = { enabled = true },
+        functionLikeReturnTypes = { enabled = true },
+        parameterNames = { enabled = "literals" },
+        parameterTypes = { enabled = true },
+        propertyDeclarationTypes = { enabled = true },
+        variableTypes = { enabled = false },
       },
     },
   },
