@@ -19,8 +19,6 @@ require("eikster-dk.plugins.git")
 require("eikster-dk.plugins.trouble")
 require("eikster-dk.plugins.lualine")
 require("eikster-dk.plugins.noice")
-require("eikster-dk.plugins.treesitter")
-require("eikster-dk.plugins.treesitter-autotag")
 require("eikster-dk.plugins.snacks")
 
 --
@@ -35,7 +33,10 @@ require("eikster-dk.plugins.conform")
 -- CODING and LSP
 --
 --
+require("eikster-dk.plugins.treesitter")
+require("eikster-dk.plugins.treesitter-autotag")
 require("lazydev").setup({})
+require("eikster-dk.plugins.lsp")
 
 -- require("nvim-autopairs").setup({ check_ts = true })
 -- require("nvim-ts-autotag").setup({ enable = true })

@@ -7,6 +7,7 @@ conform.setup({
     nix = { "nixpkgs_fmt" },
     sql = { "pg_format" },
     templ = { "templ" },
+    go = { "gofumpt" },
     ["javascript"] = { "prettier" },
     ["typescript"] = { "prettier" },
   },
