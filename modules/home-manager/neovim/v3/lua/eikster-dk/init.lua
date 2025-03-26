@@ -33,9 +33,11 @@ require("eikster-dk.plugins.conform")
 -- CODING and LSP
 --
 --
+require("lazydev").setup({})
+require("eikster-dk.plugins.blink-cmp")
 require("eikster-dk.plugins.treesitter")
 require("eikster-dk.plugins.treesitter-autotag")
-require("lazydev").setup({})
+require("eikster-dk.lsp-autocommands").setup()
 require("eikster-dk.plugins.lsp")
 
 -- require("nvim-autopairs").setup({ check_ts = true })

@@ -18,6 +18,12 @@ local capabilities = blink.get_lsp_capabilities({
 local on_attach = function(client, bufnr)
   wk.add({
     {
+      "ca",
+      vim.lsp.buf.code_action,
+      desc = "LSP Code Actions",
+      buffer = bufnr,
+    },
+    {
       "gd",
       function()
         snacks.picker.lsp_definitions()
