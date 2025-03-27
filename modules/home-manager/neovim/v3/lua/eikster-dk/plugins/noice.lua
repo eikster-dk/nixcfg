@@ -1,6 +1,12 @@
 local noice = require("noice")
 local wk = require("which-key")
-vim.notify = require("notify")
+local notify = require("notify")
+
+notify.setup({
+  background_colour = "#000000",
+})
+
+vim.notify = notify
 
 noice.setup({
   lsp = {

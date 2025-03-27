@@ -34,10 +34,10 @@ require("eikster-dk.plugins.conform")
 --
 --
 require("lazydev").setup({})
+require("eikster-dk.lsp-autocommands").setup()
 require("eikster-dk.plugins.blink-cmp")
 require("eikster-dk.plugins.treesitter")
 require("eikster-dk.plugins.treesitter-autotag")
-require("eikster-dk.lsp-autocommands")
 require("eikster-dk.plugins.lsp")
 require("eikster-dk.plugins.mini-ai")
 require("eikster-dk.plugins.mini-pairs")

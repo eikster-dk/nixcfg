@@ -9,10 +9,26 @@ snacks.setup({
 
 wk.add({
   {
-    "<leader><space>",
+    "<leader>fb",
     function()
-      snacks.picker.smart()
+      snacks.picker.buffers()
     end,
-    desc = "Smart Find Files",
+    desc = "Buffers",
+  },
+  {
+    "<leader>ff",
+    function()
+      snacks.picker.files({
+        hidden = true,
+      })
+    end,
+    desc = "Find Files",
+  },
+  {
+    "<leader>fg",
+    function()
+      snacks.picker.git_files()
+    end,
+    desc = "Find Git Files",
   },
 })

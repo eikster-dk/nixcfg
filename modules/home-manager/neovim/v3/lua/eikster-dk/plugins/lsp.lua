@@ -22,6 +22,7 @@ local on_attach = function(client, bufnr)
       vim.lsp.buf.code_action,
       desc = "LSP Code Actions",
       buffer = bufnr,
+      mode = { "v", "n" },
     },
     {
       "gd",
