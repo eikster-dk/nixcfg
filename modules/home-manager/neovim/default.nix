@@ -22,9 +22,6 @@ in
       vimAlias = true;
       vimdiffAlias = true;
       plugins = with pkgs.vimPlugins; [
-        # (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
-        # (fromGithub "echasnovski" "mini.ai" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
-        (fromGithub "echasnovski" "mini.icons" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
 
         # general plugins
         nui-nvim
@@ -45,6 +42,8 @@ in
         trouble-nvim
         vim-be-good
         which-key-nvim
+        (fromGithub "echasnovski" "mini.ai" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
+        (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
 
         ## formatting
         conform-nvim
@@ -56,20 +55,15 @@ in
         nvim-notify
         nvim-web-devicons
         (fromGithub "folke" "snacks.nvim" "v2.22.0" "iXfOTmeTm8/BbYafoU6ZAstu9+rMDfQtuA2Hwq0jdcE=")
-
-
-
         # telescope-nvim
         # telescope-github-nvim
         # telescope-fzf-native-nvim
-        #
-        # formatting
+
+
 
         # Coding
-
         lazydev-nvim
         nvim-lspconfig
-
         blink-cmp
         nvim-ts-autotag
 
