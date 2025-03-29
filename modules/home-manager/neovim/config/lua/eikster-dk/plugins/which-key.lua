@@ -29,7 +29,7 @@ wk.setup({
         end,
       },
       {
-        "<leader>w",
+        "<leader>W",
         group = "windows",
         proxy = "<c-w>",
         expand = function()

@@ -20,6 +20,7 @@ require("eikster-dk.plugins.trouble")
 require("eikster-dk.plugins.lualine")
 require("eikster-dk.plugins.noice")
 require("eikster-dk.plugins.snacks")
+require("eikster-dk.plugins.escape")
 
 --
 --

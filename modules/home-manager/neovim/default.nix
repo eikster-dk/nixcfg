@@ -42,8 +42,9 @@ in
         trouble-nvim
         vim-be-good
         which-key-nvim
-        (fromGithub "echasnovski" "mini.ai" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
-        (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
+        better-escape-nvim
+        (fromGithub "echasnovski" "mini.ai" "v0.15.0" "sha256-b/776l9nYM9e2atzXrvOk9dCxjzIuW/+iINC/yPv88Y=")
+        (fromGithub "echasnovski" "mini.pairs" "v0.15.0" "PtHxLKU1smVTx655r5SINxuz5CJmZWnBW70T8zJ/oxM=")
 
         ## formatting
         conform-nvim
@@ -133,7 +134,7 @@ in
     ];
 
     xdg.configFile."nvim" = {
-      source = ./v3;
+      source = ./config;
     };
   };
 }

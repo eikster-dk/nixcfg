@@ -25,6 +25,38 @@ local on_attach = function(client, bufnr)
       mode = { "v", "n" },
     },
     {
+      "cr",
+      vim.lsp.buf.rename,
+      desc = "LSP rename",
+      buffer = bufnr,
+    },
+    {
+      "<C-e>",
+      vim.diagnostic.open_float,
+      desc = "Show Diagnostics in float",
+      buffer = bufnr,
+    },
+    {
+      "<leader>cl",
+      function()
+        Snacks.picker.lsp_config()
+      end,
+      desc = "Lsp Info",
+    },
+    {
+      "K",
+      vim.lsp.buf.hover,
+      desc = "LSP hover",
+      buffer = bufnr,
+    },
+    {
+      "<C-s>",
+      vim.lsp.buf.signature_help,
+      desc = "LSP signature help",
+      buffer = bufnr,
+      mode = { "i", "n" },
+    },
+    {
       "gd",
       function()
         snacks.picker.lsp_definitions()
@@ -50,7 +82,7 @@ local on_attach = function(client, bufnr)
       buffer = bufnr,
     },
     {
-      "gI",
+      "gi",
       function()
         snacks.picker.lsp_implementations()
       end,
