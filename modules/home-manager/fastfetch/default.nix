@@ -34,6 +34,11 @@ in
             type = "os";
           }
           {
+            key = "packages";
+            keyDolor = "33";
+            type = "packages";
+          }
+          {
             format = "{1}d {2}h {3}m";
             key = "uptime";
             keyDolor = "33";
