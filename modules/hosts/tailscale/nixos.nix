@@ -22,5 +22,7 @@ in
       openFirewall = true;
       useRoutingFeatures = "both";
     };
+
+    systemd.services.tailscaled.after = [ "systemd-networkd-wait-online.service" ];
   };
 }
