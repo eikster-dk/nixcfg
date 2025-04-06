@@ -22,42 +22,55 @@ in
       vimAlias = true;
       vimdiffAlias = true;
       plugins = with pkgs.vimPlugins; [
-        (fromGithub "echasnovski" "mini.pairs" "v0.13.0" "lszfplyL9Mj/2gQz7ITzRdru9djPxJKB2ncvV0MaE0k=")
-        (fromGithub "echasnovski" "mini.ai" "v0.13.0" "Ur7rSw0OzmQevlNluyEZcb3vzyTNDNOTv92w+0jxUVA=")
 
+        # general plugins
+        nui-nvim
+        plenary-nvim
+
+        ## theming
+        catppuccin-nvim
+
+        ## AI
+        # copilot-lua
+
+        ## editor
         harpoon2
         oil-nvim
-        trouble-nvim
         cloak-nvim
         flash-nvim
+        gitsigns-nvim
+        trouble-nvim
+        vim-be-good
+        which-key-nvim
+        better-escape-nvim
+        (fromGithub "echasnovski" "mini.ai" "v0.15.0" "sha256-b/776l9nYM9e2atzXrvOk9dCxjzIuW/+iINC/yPv88Y=")
+        (fromGithub "echasnovski" "mini.pairs" "v0.15.0" "PtHxLKU1smVTx655r5SINxuz5CJmZWnBW70T8zJ/oxM=")
+
+        ## formatting
+        conform-nvim
 
         # UI
-        catppuccin-nvim
-        gitsigns-nvim
-        indent-blankline-nvim
+        # indent-blankline-nvim
         lualine-nvim
         noice-nvim
-        dressing-nvim
+        nvim-notify
         nvim-web-devicons
-        which-key-nvim
+        (fromGithub "folke" "snacks.nvim" "v2.22.0" "iXfOTmeTm8/BbYafoU6ZAstu9+rMDfQtuA2Hwq0jdcE=")
+        # telescope-nvim
+        # telescope-github-nvim
+        # telescope-fzf-native-nvim
 
-        telescope-nvim
-        telescope-github-nvim
-        telescope-fzf-native-nvim
+
 
         # Coding
+        lazydev-nvim
         nvim-lspconfig
-        conform-nvim
         blink-cmp
         nvim-ts-autotag
 
-        fidget-nvim
-        luasnip
-        friendly-snippets
-        neodev-nvim
-
         #neogen
-        nvim-surround
+
+        ## treesitter stuff
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
           with plugins; [
             bash
@@ -91,9 +104,7 @@ in
             vim
             yaml
           ]))
-
-        # treesitter injections for home-manager
-        hmts-nvim
+        nvim-treesitter-textobjects
       ];
     };
 
@@ -123,7 +134,7 @@ in
     ];
 
     xdg.configFile."nvim" = {
-      source = ./v2;
+      source = ./config;
     };
   };
 }
