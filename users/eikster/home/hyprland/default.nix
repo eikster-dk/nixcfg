@@ -6,7 +6,7 @@
   wayland.windowManager = {
     hyprland.settings = {
       binds = [
-        "$mainMod,Z&J,exec,${lib.getExe pkgs.vesktop}"
+        "Super_L,Z&J,exec,${lib.getExe pkgs.vesktop}"
       ];
 
       windowrulev2 = [
