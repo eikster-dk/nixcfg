@@ -76,7 +76,7 @@ in
       nerdfonts
       fd
       go-task
-      nodejs_20
+      nodejs_22
       ripgrep
       rsync
       sqlc
@@ -92,6 +92,7 @@ in
     ### nixos specific packages
     ++ (lib.optionals (isLinux) [
       obsidian
+      spotify
       vesktop
     ]);
 
