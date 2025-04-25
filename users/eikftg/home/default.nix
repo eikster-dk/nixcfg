@@ -25,7 +25,8 @@
       comma
       dogdns
       fd
-      nodejs_20
+      jq
+      nodejs_22
       pnpm
       go-task
       ripgrep
