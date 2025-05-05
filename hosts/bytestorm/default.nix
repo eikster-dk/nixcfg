@@ -36,6 +36,7 @@
 
     console.keyMap = "dk-latin1";
 
+    programs.fish.enable = true;
     features = {
       _1password.enable = true;
       ghostty.enable = true;

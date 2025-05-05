@@ -15,7 +15,7 @@ in
   users.mutableUsers = false;
 
   users.users.eikster = {
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "eikster";
     hashedPasswordFile = config.age.secrets.eikster.path;
