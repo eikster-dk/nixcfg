@@ -44,7 +44,6 @@ in
           sessionizer = true;
         };
         top.enable = true;
-        wezterm.enable = true;
         yazi.enable = true;
         xh.enable = true;
         zoxide.enable = true;

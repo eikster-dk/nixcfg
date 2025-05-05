@@ -28,7 +28,7 @@ in
 
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs pkgs;
     };
     users = {
       eikster = import ./home;

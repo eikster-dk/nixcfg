@@ -1,14 +1,12 @@
-{ pkgs, ... }: {
+{...}: {
   imports = [
-    ./dunst.nix
-    ./fonts.nix
-    ./gtk.nix
     ./hyprland.nix
     ./hypridle.nix
-    ./hyprpaper.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
+    ./mako.nix
     ./rofi.nix
+    ./dunst.nix
     ./waybar.nix
-    ./wofi.nix
   ];
 }

@@ -31,7 +31,12 @@
     tailscale.url = "https://flakehub.com/f/tailscale/tailscale/1.76.6.tar.gz";
 
     # Theming
+    stylix.url = "github:danth/stylix/release-24.11";
     catppuccin.url = "github:catppuccin/nix";
+
+    #secure boot
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     { self
@@ -71,19 +76,19 @@
 
         # nixos
         nixosConfigurations = {
+          bytestorm = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {
+              inherit inputs;
+            };
+            modules = [ ./hosts/bytestorm ];
+          };
           mibzy = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = {
               inherit inputs;
             };
             modules = [ ./hosts/mibzy ];
-          };
-          nixbook = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = {
-              inherit inputs;
-            };
-            modules = [ ./hosts/nixbook ];
           };
         };
 
