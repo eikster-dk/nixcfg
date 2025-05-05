@@ -55,6 +55,9 @@
         base.enable = true;
       };
       programs = {
+        pam.clamshell = {
+          enable = true;
+        };
         fwupd = {
           enable = true;
           autoCheck.enable = true;
