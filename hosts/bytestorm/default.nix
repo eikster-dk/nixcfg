@@ -37,6 +37,14 @@
     console.keyMap = "dk-latin1";
 
     programs.fish.enable = true;
+
+    services.udev = {
+      enable = true;
+      extraRules = ''
+        ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTR{power/wakeup}="enabled"
+      '';
+    };
+
     features = {
       _1password.enable = true;
       ghostty.enable = true;
