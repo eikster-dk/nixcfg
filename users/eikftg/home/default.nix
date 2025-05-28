@@ -30,10 +30,11 @@
       pnpm
       go-task
       ripgrep
+      sqlc
       tailwindcss
       tree
       ulid
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ]
     ### darwin specific packages
     ++ (lib.optionals (pkgs.system == "aarch64-darwin") [

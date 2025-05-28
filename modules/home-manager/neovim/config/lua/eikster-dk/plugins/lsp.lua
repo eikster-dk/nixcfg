@@ -229,6 +229,8 @@ lspconfig.vtsls.setup({
   },
 })
 
+lspconfig.astro.setup({})
+
 lspconfig.vtsls.setup({
   capabilities = capabilities,
   on_attach = on_attach,

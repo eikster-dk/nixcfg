@@ -55,7 +55,8 @@ in
         noice-nvim
         nvim-notify
         nvim-web-devicons
-        (fromGithub "folke" "snacks.nvim" "v2.22.0" "iXfOTmeTm8/BbYafoU6ZAstu9+rMDfQtuA2Hwq0jdcE=")
+        snacks-nvim
+        # (fromGithub "folke" "snacks.nvim" "v2.22.0" "iXfOTmeTm8/BbYafoU6ZAstu9+rMDfQtuA2Hwq0jdcE=")
         # telescope-nvim
         # telescope-github-nvim
         # telescope-fzf-native-nvim
@@ -73,6 +74,7 @@ in
         ## treesitter stuff
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins:
           with plugins; [
+            astro
             bash
             css
             csv
@@ -110,6 +112,7 @@ in
 
     # LSP stuff, treesitter, formatters, linters
     home.packages = with pkgs; with pkgs.nodePackages_latest; [
+      astro-language-server
       bash-language-server
       cargo
       delve

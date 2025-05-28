@@ -2,21 +2,21 @@
   description = "eikster-dk's dotfiles written in nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # flake.parts
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # home-manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
     ghostty.url = "github:ghostty-org/ghostty";
 
     # Nix-darwin
-    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Disko
@@ -31,7 +31,7 @@
     tailscale.url = "https://flakehub.com/f/tailscale/tailscale/1.76.6.tar.gz";
 
     # Theming
-    stylix.url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:danth/stylix/release-25.05";
     catppuccin.url = "github:catppuccin/nix";
 
     #secure boot
@@ -121,7 +121,7 @@
             pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
             extraSpecialArgs = { inherit inputs; };
             modules = [
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
               ./users/eikster/home
             ];
           };
@@ -129,7 +129,7 @@
             pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
             extraSpecialArgs = { inherit inputs; };
             modules = [
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
               ./users/eikftg/home
             ];
           };

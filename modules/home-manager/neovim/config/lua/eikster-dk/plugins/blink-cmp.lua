@@ -68,7 +68,7 @@ blink.setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer", "copilot" },
+    default = { "lsp", "path", "snippets", "buffer" },
     providers = {
       lsp = {
         min_keyword_length = 0,
