@@ -101,6 +101,7 @@ in
             query
             sql
             ssh_config
+            svelte
             templ
             typescript
             vim
@@ -127,6 +128,7 @@ in
       shfmt
       stylua
       sumneko-lua-language-server
+      svelte-language-server
       tailwindcss-language-server
       templ
       tree-sitter

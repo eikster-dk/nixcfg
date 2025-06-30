@@ -229,7 +229,15 @@ lspconfig.vtsls.setup({
   },
 })
 
-lspconfig.astro.setup({})
+lspconfig.astro.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig.svelte.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 lspconfig.vtsls.setup({
   capabilities = capabilities,
