@@ -1,5 +1,10 @@
 local blink = require("blink.cmp")
 
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
+
 blink.setup({
   keymap = { preset = "default" },
   appearance = {
@@ -68,7 +73,7 @@ blink.setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
+    default = { "lsp", "path", "snippets", "buffer", "copilot" },
     providers = {
       lsp = {
         min_keyword_length = 0,
@@ -83,6 +88,12 @@ blink.setup({
       buffer = {
         min_keyword_length = 5,
         max_items = 5,
+      },
+      copilot = {
+        name = "copilot",
+        module = "blink-cmp-copilot",
+        score_offset = 100,
+        async = true,
       },
     },
   },

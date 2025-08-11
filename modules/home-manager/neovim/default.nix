@@ -31,7 +31,8 @@ in
         catppuccin-nvim
 
         ## AI
-        # copilot-lua
+        copilot-lua
+        blink-cmp-copilot
 
         ## editor
         harpoon2
